@@ -25,7 +25,7 @@ Download the full NRC-VAD-Lexicon file (`NRC-VAD-Lexicon.txt`) from the official
 
 ## 4. Product ft_100k.csv and glove_100k.txt
 
-Select the first 50k and the last 50k from crawl-300d-2M.vec
+Select the first 50k and the last 50k rows from crawl-300d-2M.vec
 
 ```bash
 (head -n 50000 crawl-300d-2M.vec && tail -n 50000 crawl-300d-2M.vec)
@@ -34,4 +34,4 @@ Select the first 50k and the last 50k from crawl-300d-2M.vec
 Select the first 50k and the last 50k from glove.840B.300d.txt
 ```bash
 (head -n 50000 glove.840B.300d.txt && tail -n 50000 glove.840B.300d.txt)
-```
+```# Bias-in-Word-Embeddings
