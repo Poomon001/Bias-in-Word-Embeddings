@@ -3,3 +3,4 @@ venv/
 .idea/
 ft_100k.csv
 glove_100k.txt
+*100k*

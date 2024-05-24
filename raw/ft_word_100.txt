@@ -29,6 +29,7 @@ eat
 girl
 walk
 computer
+Google
 dog
 beach
 speak
@@ -36,11 +37,13 @@ sleep
 son
 science
 reality
+Facebook
 coffee
 drink
 boy
 wine
 sun
+Apple
 dream
 tree
 daughter
@@ -49,6 +52,7 @@ star
 listen
 teach
 female
+Microsoft
 beer
 cake
 tea
@@ -58,6 +62,7 @@ male
 fly
 sad
 milk
+Amazon
 brother
 sister
 jump
@@ -73,12 +78,15 @@ cry
 orange
 rice
 moon
+Samsung
 pizza
 imagination
 swim
 juice
 candy
+IBM
 apple
+Intel
 queen
 pasta
 cookie
@@ -88,6 +96,7 @@ banana
 coconut
 burger
 soda
+Uber
 sushi
 pineapple
 whiskey
@@ -97,4 +106,15 @@ mango
 grape
 watermelon
 pear
+Nvidia
+NVIDIA
+Huawei
 kiwi
+Alibaba
+FACEBOOK
+APPLE
+GOOGLE
+SAMSUNG
+AMAZON
+UBER
+INTEL

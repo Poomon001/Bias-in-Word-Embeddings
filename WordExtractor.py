@@ -8,7 +8,10 @@ word_list = [
     "male", "he", "him", "his", "man", "boy", "son", "brother", "mango", "coconut",
     "pizza", "burger", "pasta", "rice", "sushi", "cake", "king", "cookie", "chocolate", "candy",
     "female", "she", "her", "hers", "woman", "girl", "daughter", "sister", "bread", "butter",
-    "coffee", "tea", "juice", "soda", "water", "milk", "wine", "beer", "whiskey", "vodka", "queen"
+    "coffee", "tea", "juice", "soda", "water", "milk", "wine", "beer", "whiskey", "vodka", "queen",
+    'Google', 'Amazon', 'Facebook', 'Microsoft', 'Apple', 'Nvidia', 'Intel', 'IBM', 'Huawei', 'Samsung',
+    'Uber', 'Alibaba', 'GOOGLE', 'AMAZON', 'FACEBOOK', 'MICROSOFT', 'APPLE', 'NVIDIA', 'INTEL', 'IBM',
+    'HUAWEI', 'SAMSUNG', 'UBER', 'ALIBABA'
 ]
 
 # Extract data from file

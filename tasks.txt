@@ -1,0 +1,20 @@
+17 May 2024
+1. Explored the SC_WEAT metric.
+2. Explored the github repo of the SOTA paper, then adapted their code for our project.
+3. Explored OpenAI, GloVE, and FastText embeddings.
+4. Compared them wrt SC_WEAT; results are on a spreadsheet for the gender dimension.
+
+24 May 2024
+1. Grouped data for future use.
+2. Documented setup steps due to lack of instructions on the source GitHub.
+3. Explored GloVe and FastText datasets in addition to OpenAI on SC-WEAT.
+4. Compared and visualized SC-WEAT distribution results.
+5. Analyzed frequency ratio distribution of male and female effect sizes [0, 0.2, 0.5, 0.8] for OpenAI, GloVe, and FastText models.
+6. **Visualized ratio distribution results.
+7. Began big tech analysis.
+
+TODO:
+1. Finish all evaluation methods
+2. Write a brief explanation for each method and virtualization
+3. Generate more virtualization
+4. Explore different demographic axes in addition to gender bias
