@@ -40,6 +40,7 @@ def process(embeddingInoutPath, resultOutputPath):
 
         es_list.append(ceiling_counts)
 
+    print(es_list)
     es_arr = np.array(es_list)
     cols = ['num_words'] + [f'female_{str(i)}' for i in effect_size_floors] + [f'male_{str(i)}' for i in effect_size_floors]
     es_df = pd.DataFrame(es_arr, columns=cols)

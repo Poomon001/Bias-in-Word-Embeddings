@@ -13,8 +13,19 @@
 6. **Visualized ratio distribution results.
 7. Began big tech analysis.
 
-TODO:
-1. Finish all evaluation methods
-2. Write a brief explanation for each method and virtualization
-3. Generate more virtualization
-4. Explore different demographic axes in addition to gender bias
+31 May 2024
+1. Crate util: to extract k most frequency word embeddings excluding stop words and punctuations,
+   to compute SC-WEAT from word embedding file, to get male/female high effect size
+2. Completed Gender Associateion for most frequency words
+3. Completed Gender Association by frequency range and effect size
+4. Working on clustering (cannot find male high effect size: I think the document is wrong. The code inspection says 0.95 for male)
+
+07 June 2024
+1. Imporve and format the code structure so that it is easier to switch between models
+2. Finish the cluster method and in the middle of big tech for GloVe 100000
+3. Get OpenAI embedded 100000 with filtered words
+4. Get OpenAI to work on some methods, but there is still an issue to fix for 100000 words
+
+TO ASK
+1. Explain about attibute words
+2. Check my TODO if I understand it correctly?

@@ -73,7 +73,6 @@ def process(embeddingInoutPath, resultOutputPath1, resultOutputPath2):
     bias_df.rename(columns={'index': 'word'}, inplace=True)
     bias_df.to_csv(resultOutputPath1, index=False)
     print('VAD')
-
     #Non VAD EWAT
     targets = embedding_targets[:]
     bias_array = np.array([SC_WEAT(embedding_df.loc[word].to_numpy(), female_embeddings, male_embeddings, PERMUTATIONS) for word in targets])

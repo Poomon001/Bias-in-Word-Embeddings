@@ -6,7 +6,7 @@ load_dotenv()
 api_key = os.getenv("API_KEY")
 url = "https://api.openai.com/v1/embeddings"
 
-WORDS_FILE = "raw/glove_word_100.txt"
+WORDS_FILE = "openAI/glove_english_word_100000_most_freq_skip.txt"
 word_list = []
 
 def get_word_list():
@@ -25,22 +25,32 @@ def writeTo(filename, response):
             file.write(embedding_str + "\n")
 
 if __name__ == '__main__':
+    STEP = 2000
     word_list = get_word_list()
 
-    data = {
-        "model": "text-embedding-3-small",
-        "input": word_list
-    }
+    all_results = []
 
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {api_key}"
-    }
+    for i in range(0, len(word_list), STEP):
+        chunk = word_list[i:i + STEP]
 
-    # Make the POST request
-    response = requests.post(url, json=data, headers=headers)
+        data = {
+            "model": "text-embedding-3-small",
+            "input": chunk
+        }
 
-    if response.status_code == 200:
-        writeTo("openAI/openAI_100.txt", response.json()["data"])
-    else:
-        print("Error:", response.text)
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {api_key}"
+        }
+
+        # Make the POST request
+        response = requests.post(url, json=data, headers=headers)
+
+        if response.status_code == 200:
+            all_results.extend(response.json()["data"])
+        else:
+            print(f"Error with chunk {i // STEP + 1}: {response.text}")
+            break
+
+    # Write all results to a file once all chunks are processed
+    writeTo("openAI/openAI_100000_skip.txt", all_results)
