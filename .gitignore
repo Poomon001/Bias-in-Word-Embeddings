@@ -3,3 +3,11 @@ venv/
 .idea/
 ft_100k.csv
 glove_100k.txt
+*100k*
+*1000*
+*110*
+*.txt
+*.csv
+temp/
+*.dat
+*.vec
