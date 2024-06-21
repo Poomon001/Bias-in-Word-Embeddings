@@ -24,14 +24,14 @@ def SC_WEAT(w, A, B, permutations):
 
 PERMUTATIONS = 10000
 CAP = 100000
-STEP = 10000
+STEP = 10
 female_stimuli = ["female", "she", "her", "hers", "woman", "girl", "daughter", "sister"]
 male_stimuli = ["male", "he", "him", "his", "man", "boy", "son", "brother"]
 
 def process(embeddingInoutPath, resultOutputPath, tempDir, filename):
     # no idea what does it do
     embedding_df = pd.read_csv(embeddingInoutPath, sep=' ', header=None, index_col=0, na_values=None,
-                               keep_default_na=False)
+                               keep_default_na=False, encoding='utf-8')
     female_embeddings, male_embeddings = embedding_df.loc[female_stimuli].to_numpy(), embedding_df.loc[male_stimuli].to_numpy()
     embedding_targets = embedding_df.index.tolist()[:CAP]
 
@@ -41,7 +41,7 @@ def process(embeddingInoutPath, resultOutputPath, tempDir, filename):
         female_embeddings_df.to_csv('../results/six_methods/most_frequency_words/female_embeddings.csv', index=False, header=False)
 
         male_embeddings_df = pd.DataFrame(male_embeddings)
-        male_embeddings_df.to_csv('../results/six_methods/most_frequency_words/male__embeddings.csv', index=False, header=False)
+        male_embeddings_df.to_csv('../results/six_methods/most_frequency_words/male_embeddings.csv', index=False, header=False)
 
         print("CSV files saved successfully.")
     except Exception as e:
@@ -53,7 +53,7 @@ def process(embeddingInoutPath, resultOutputPath, tempDir, filename):
         targets = embedding_targets[i * STEP:(i + 1) * STEP]
         bias_array = np.array([SC_WEAT(embedding_df.loc[word].to_numpy(), female_embeddings, male_embeddings, PERMUTATIONS) for word in targets])
         bias_df = pd.DataFrame(bias_array, index=targets, columns=['female_effect_size', 'female_p_value'])
-        bias_df.to_csv(path.join(tempDir, f'{filename}_100k_{i}.csv'))
+        bias_df.to_csv(path.join(tempDir, f'{filename}_100k_{i}.csv'), encoding='utf-8')
 
     print('Non-VAD')
 
@@ -63,11 +63,11 @@ def process(embeddingInoutPath, resultOutputPath, tempDir, filename):
     for i in range(10):
         df = pd.read_csv(path.join(tempDir, f'{filename}_100k_{i}.csv'),
                          names=['word', 'female_effect_size', 'p_value'], skiprows=1, index_col='word', na_values=None,
-                         keep_default_na=False)
+                         keep_default_na=False, encoding='utf-8')
         concat_.append(df)
 
     full_df = pd.concat(concat_, axis=0)
-    full_df.to_csv(resultOutputPath)
+    full_df.to_csv(resultOutputPath, encoding='utf-8')
 
     return bias_df
 
@@ -100,17 +100,23 @@ if __name__ == "__main__":
     tempDir = "../temp/google"
     raw = "../google/google_100000_most_freq_skip.txt"
     result = "../results/google/most_frequency_words/google_100000_most_frequency.csv"
-    filename = "cohere"
+    filename = "google"
     # bias_google_100000 = process(raw, result, tempDir, filename)
 
     tempDir = "../temp/microsoft"
     raw = "../microsoft/microsoft_100000_most_freq_skip.txt"
     result = "../results/microsoft/most_frequency_words/microsoft_100000_most_frequency.csv"
     filename = "microsoft"
-    bias_microsoft_100000 = process(raw, result, tempDir, filename)
+    # bias_microsoft_100000 = process(raw, result, tempDir, filename)
 
     tempDir = "../temp/microsoft_norm"
     raw = "../microsoft_norm/microsoft_norm_100000_most_freq_skip.txt"
     result = "../results/microsoft_norm/most_frequency_words/microsoft_norm_100000_most_frequency.csv"
     filename = "microsoft_norm"
-    bias_microsoft_norm_100000 = process(raw, result, tempDir, filename)
+    # bias_microsoft_norm_100000 = process(raw, result, tempDir, filename)
+
+    tempDir = "../temp/google"
+    raw = "../google/google_2000_most_freq_skip.txt"
+    result = "../results/google/most_frequency_words/google_2000_most_frequency.csv"
+    filename = "test_google"
+    bias_google_100000 = process(raw, result, tempDir, filename)
