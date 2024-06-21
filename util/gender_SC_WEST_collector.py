@@ -57,6 +57,7 @@ def process(embeddingInoutPath, resultOutputPath, tempDir, filename):
 
     print('Non-VAD')
 
+    ''' TODO: Check if concat_ present any error in output dataset, comment this function and manually concat the csv if error presents '''
     # Concatenate and save 10k-word association dataframes
     concat_ = []
     for i in range(10):

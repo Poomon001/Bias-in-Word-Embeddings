@@ -17,18 +17,23 @@ def writeTo(filename, response):
     with open(filename, 'w', encoding='utf-8') as file:
         for word, vectors in zip(word_list, response):
             file.write(word + " ")
-            embedding_str = " ".join(str(vector) for vector in vectors['embedding'])
+            embedding_str = " ".join(str(vector) for vector in vectors)
             file.write(embedding_str + "\n")
 
 if __name__ == '__main__':
-    STEP = 5
-    word_list = get_word_list()[:11]
-
+    STEP = 5000
+    word_list = get_word_list()
     all_results = []
 
-    embeddings = model.encode(word_list,
-                                batch_size=12,
-                                max_length=1024,
-                                )['dense_vecs']
+    for i in range(0, len(word_list), STEP):
+        chunk = word_list[i:i + STEP]
 
-print(embeddings)
+        embeddings = model.encode(word_list,
+                        batch_size=12,
+                        max_length=512,
+                        )['dense_vecs']
+
+        all_results.extend(embeddings)
+        print(f"completed: ", i)
+
+    writeTo("BGE/BGE_100000_most_freq_skip.txt", all_results)
