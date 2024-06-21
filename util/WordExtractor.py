@@ -1,3 +1,7 @@
+'''
+WordExtractor:
+Extract only english words from word embedding files to a new txt file
+'''
 word_list = [
     "cat", "dog", "house", "car", "tree", "computer", "book", "city", "river", "mountain",
     "beach", "sky", "sun", "moon", "star", "love", "hate", "happy", "sad", "laugh", "cry",
@@ -39,15 +43,7 @@ def writeToEmbeddings(filename: str, content: str):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    content = readFrom("raw/glove_1000_most_freq_skip.txt")
-    writeTo("openAI/glove_english_word_1000_most_freq_skip.txt", content)
-    # writeToEmbeddings("openAI/glove_embeddings_1000.txt", content)
-
-    content = readFrom("raw/glove_100000_most_freq_skip.txt")
-    writeTo("openAI/glove_english_word_100000_most_freq_skip.txt", content)
-
-    # content = readFrom("raw/ft_100k.csv")
-    # writeTo("openAI/ft_word_100.txt", content)
-    # writeToEmbeddings("openAI/ft_embeddings_100.txt", content)
+    content = readFrom("../raw/glove_100000_most_freq_skip.txt")
+    writeTo("../openAI/glove_english_word_100000_most_freq_skip.txt", content)
 
 

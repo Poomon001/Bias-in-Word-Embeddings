@@ -8,3 +8,6 @@ glove_100k.txt
 *110*
 *.txt
 *.csv
+temp/
+*.dat
+*.vec

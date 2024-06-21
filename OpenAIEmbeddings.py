@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-api_key = os.getenv("API_KEY")
+api_key = os.getenv("API_KEY_OPENAI")
 url = "https://api.openai.com/v1/embeddings"
 
 WORDS_FILE = "openAI/glove_english_word_100000_most_freq_skip.txt"
@@ -53,4 +53,4 @@ if __name__ == '__main__':
             break
 
     # Write all results to a file once all chunks are processed
-    writeTo("openAI/openAI_100000_skip.txt", all_results)
+    writeTo("openAI/openAI_100000_most_freq_skip.txt", all_results)

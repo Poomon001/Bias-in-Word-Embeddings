@@ -60,4 +60,10 @@ def plot(input, output, num_columns_list):
 if __name__ == "__main__":
     num_columns_list = [100, 1000, 10000, 100000]
     # plot("../results/six_methods/most_frequency_words/glove_100000_most_frequency.csv", "../plots/six_methods/most_frequency_words/glove_frequency_ratio.pdf", num_columns_list)
-    plot("../results/openAI/most_frequency_words/openAI_100000_most_frequency.csv", "../plots/openAI/most_frequency_words/glove_frequency_ratio.pdf", num_columns_list)
+    # plot("../results/openAI/most_frequency_words/openAI_100000_most_frequency.csv", "../plots/openAI/most_frequency_words/openai_frequency_ratio.pdf", num_columns_list)
+    # plot("../results/fasttext/most_frequency_words/ft_100000_most_frequency.csv",
+    #      "../plots/fasttext/most_frequency_words/ft_frequency_ratio.pdf", num_columns_list)
+    # plot("../results/cohere/most_frequency_words/cohere_100000_most_frequency.csv",
+    #      "../plots/cohere/most_frequency_words/cohere_frequency_ratio.pdf", num_columns_list)
+    plot("../results/google/most_frequency_words/google_100000_most_frequency.csv",
+         "../plots/google/most_frequency_words/google_frequency_ratio.pdf", num_columns_list)

@@ -1,3 +1,9 @@
+'''
+plot_cluster
+Visualize word clusters derived from word embeddings. The word embeddings are reduced to two dimensions using the t-SNE
+(t-Distributed Stochastic Neighbor Embedding) method to facilitate visualization.
+'''
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -44,5 +50,37 @@ if __name__ == "__main__":
     malePDF = "../plots/six_methods/clusters/male_clusters.pdf"
     femalePDF = "../plots/six_methods/clusters/female_clusters.pdf"
 
+    # plot(maleDat, malePDF, "Male Scatter Plot of Words by Cluster")
+    # plot(femaleDat, femalePDF,"Female Scatter Plot of Words by Cluster")
+
+    femaleDat = "../results/fasttext/clusters/tsne_clusters_female_male_vis_elkan_11.dat"
+    maleDat = "../results/fasttext/clusters/tsne_clusters_male_male_vis_elkan_11.dat"
+    malePDF = "../plots/fasttext/clusters/male_clusters.pdf"
+    femalePDF = "../plots/fasttext/clusters/female_clusters.pdf"
+
+    # plot(maleDat, malePDF, "Male Scatter Plot of Words by Cluster")
+    # plot(femaleDat, femalePDF, "Female Scatter Plot of Words by Cluster")
+
+    femaleDat = "../results/openAI/clusters/tsne_clusters_female_male_vis_elkan_11.dat"
+    maleDat = "../results/openAI/clusters/tsne_clusters_male_male_vis_elkan_11.dat"
+    malePDF = "../plots/openAI/clusters/male_clusters.pdf"
+    femalePDF = "../plots/openAI/clusters/female_clusters.pdf"
+
+    # plot(maleDat, malePDF, "Male Scatter Plot of Words by Cluster")
+    # plot(femaleDat, femalePDF, "Female Scatter Plot of Words by Cluster")
+
+    # femaleDat = "../results/cohere/clusters/tsne_clusters_female_male_vis_elkan_11.dat"
+    # maleDat = "../results/cohere/clusters/tsne_clusters_male_male_vis_elkan_11.dat"
+    # malePDF = "../plots/cohere/clusters/male_clusters.pdf"
+    # femalePDF = "../plots/cohere/clusters/female_clusters.pdf"
+
+    # plot(maleDat, malePDF, "Male Scatter Plot of Words by Cluster")
+    # plot(femaleDat, femalePDF, "Female Scatter Plot of Words by Cluster")
+
+    femaleDat = "../results/google/clusters/tsne_clusters_female_male_vis_elkan_11.dat"
+    maleDat = "../results/google/clusters/tsne_clusters_male_male_vis_elkan_11.dat"
+    malePDF = "../plots/google/clusters/male_clusters.pdf"
+    femalePDF = "../plots/google/clusters/female_clusters.pdf"
+
     plot(maleDat, malePDF, "Male Scatter Plot of Words by Cluster")
-    plot(femaleDat, femalePDF,"Female Scatter Plot of Words by Cluster")
+    plot(femaleDat, femalePDF, "Female Scatter Plot of Words by Cluster")

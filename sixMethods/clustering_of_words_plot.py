@@ -8,18 +8,24 @@ import csv
 from sklearn.manifold import TSNE
 from matplotlib import pyplot as plt
 from sklearn.cluster import KMeans
-from sklearn.metrics import silhouette_score, davies_bouldin_score,v_measure_score
+from sklearn.metrics import silhouette_score, davies_bouldin_score, v_measure_score
 
-def plot(top_100k_file, dir, dirPDF):
+def plot(embedding_100k_file, top_100k_file, dir, dirPDF):
     # Read in gender association file and get most associated female and male words
     embedding_100k = pd.read_csv(top_100k_file, na_values=None, keep_default_na=False,names=['word','female_effect_size','p_value'],skiprows=1)
 
-    # 1114
-    embedding_female = embedding_100k.loc[(float(embedding_100k['female_effect_size']) >= .5) & (float(embedding_100k['p_value']) <= .05)]
+    ''' check word: 1114 and 80009 if there is any issues '''
+    embedding_female = embedding_100k.loc[
+        (embedding_100k['female_effect_size'] >= 0.5) &
+        (embedding_100k['p_value'] <= 0.05)
+        ]
     embedding_top_female = embedding_female.head(1000)
     top_female_words = embedding_top_female['word'].tolist()
 
-    embedding_male = embedding_100k.loc[(float(embedding_100k['female_effect_size']) <= -.5) & (float(embedding_100k['p_value']) >= .95)]
+    embedding_male = embedding_100k.loc[
+        (embedding_100k['female_effect_size'] <= -.5) &
+        (embedding_100k['p_value'] >= .95)
+        ]
     embedding_top_male = embedding_male.head(1000)
     top_male_words = embedding_top_male['word'].tolist()
 
@@ -27,7 +33,7 @@ def plot(top_100k_file, dir, dirPDF):
     print(top_male_words)
 
     # TODO: Only look at the 100k embedding file used to produce the embedding_100k, does that make sense?
-    embedding_df = pd.read_csv("../raw/glove_100000_most_freq_skip.txt", sep=' ', header=None, index_col=0, na_values=None, keep_default_na=False, quoting=csv.QUOTE_NONE, nrows=100000)
+    embedding_df = pd.read_csv(embedding_100k_file, sep=' ', header=None, index_col=0, na_values=None, keep_default_na=False, quoting=csv.QUOTE_NONE, nrows=100000)
 
     print(embedding_df)
 
@@ -133,10 +139,32 @@ def plot(top_100k_file, dir, dirPDF):
 
 
 if __name__ == "__main__":
-    # dir = "../results/six_methods/clusters"
-    # dirPDF = "../plots/six_methods/clusters"
-    # plot("../results/six_methods/most_frequency_words/glove_100000_most_frequency.csv", dir, dirPDF)
+    embedding_100k_file = "../raw/glove_100000_most_freq_skip.txt"
+    top_100k_file = "../results/six_methods/most_frequency_words/glove_100000_most_frequency.csv"
+    dir = "../results/six_methods/clusters"
+    dirPDF = "../plots/six_methods/clusters"
+    # plot(embedding_100k_file,top_100k_file, dir, dirPDF)
 
+    embedding_100k_file = "../raw/glove_100000_most_freq_skip.txt"
+    top_100k_file = "../results/openAI/most_frequency_words/openAI_100000_most_frequency.csv"
     dir = "../results/openAI/clusters"
     dirPDF = "../plots/openAI/clusters"
-    plot("../results/openAI/most_frequency_words/openAI_100000_most_frequency.csv", dir, dirPDF)
+    # plot(embedding_100k_file, top_100k_file, dir, dirPDF)
+
+    embedding_100k_file = "../raw/ft_100000_most_freq_skip.csv"
+    top_100k_file = "../results/fasttext/most_frequency_words/ft_100000_most_frequency.csv"
+    dir = "../results/fasttext/clusters"
+    dirPDF = "../plots/fasttext/clusters"
+    # plot(embedding_100k_file, top_100k_file, dir, dirPDF)
+
+    embedding_100k_file = "../cohere/cohere_100000_most_freq_skip.txt"
+    top_100k_file = "../results/cohere/most_frequency_words/cohere_100000_most_frequency.csv"
+    dir = "../results/cohere/clusters"
+    dirPDF = "../plots/cohere/clusters"
+    # plot(embedding_100k_file, top_100k_file, dir, dirPDF)
+
+    embedding_100k_file = "../google/google_100000_most_freq_skip.txt"
+    top_100k_file = "../results/google/most_frequency_words/google_100000_most_frequency.csv"
+    dir = "../results/google/clusters"
+    dirPDF = "../plots/google/clusters"
+    plot(embedding_100k_file, top_100k_file, dir, dirPDF)
