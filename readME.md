@@ -89,8 +89,16 @@ requirement:
    gcloud auth application-default login
    ```
 
-## 5. Microsoft
+## 6. Microsoft
 
 Model: E5-large-v2
 
 Document: https://github.com/microsoft/unilm/tree/master/e5
+Document: https://huggingface.co/intfloat/e5-large-v2
+
+## 7. BGE (Beijing Academy of Artificial Intelligence)
+
+Model: BAAI/bge-m3-unsupervised
+
+Document: https://huggingface.co/BAAI/bge-m3
+Document: https://huggingface.co/BAAI/bge-m3-unsupervised

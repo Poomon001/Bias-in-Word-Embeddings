@@ -27,5 +27,15 @@
 4. Get OpenAI to work on some methods, but there is still an issue to fix for 100000 words
 
 TO ASK
-1. Explain about attibute words
-2. Check my TODO if I understand it correctly?
+1. Should I perform data normalization on word embedding? Will it affect our intention to find bias in raw word embeddings?
+2. I havent seen data normalization from the paper and didnt normalize data from the raw embedding: e.g fasttext and GloVe etc
+3. I can also tokenized word and find mean (baseball = base + ball), shoukd I do that?
+4. OS bug: It seems like when I auto concat .csv file with python it replace special english character with Thai
+(Solution: I will need to combine excel manully)
+(e.g Café => Cafรฉ, für => fรผr, Montréal => Montrรฉal etc)
+
+TODO:
+1. Finish Microsoft
+2. Concat excel for 7 models
+3. Add number to chart
+4. Work on BGE

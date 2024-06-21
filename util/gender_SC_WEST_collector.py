@@ -100,4 +100,16 @@ if __name__ == "__main__":
     raw = "../google/google_100000_most_freq_skip.txt"
     result = "../results/google/most_frequency_words/google_100000_most_frequency.csv"
     filename = "cohere"
-    bias_google_100000 = process(raw, result, tempDir, filename)
+    # bias_google_100000 = process(raw, result, tempDir, filename)
+
+    tempDir = "../temp/microsoft"
+    raw = "../microsoft/microsoft_100000_most_freq_skip.txt"
+    result = "../results/microsoft/most_frequency_words/microsoft_100000_most_frequency.csv"
+    filename = "microsoft"
+    bias_microsoft_100000 = process(raw, result, tempDir, filename)
+
+    tempDir = "../temp/microsoft_norm"
+    raw = "../microsoft_norm/microsoft_norm_100000_most_freq_skip.txt"
+    result = "../results/microsoft_norm/most_frequency_words/microsoft_norm_100000_most_frequency.csv"
+    filename = "microsoft_norm"
+    bias_microsoft_norm_100000 = process(raw, result, tempDir, filename)

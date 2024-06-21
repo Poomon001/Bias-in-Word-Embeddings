@@ -143,25 +143,25 @@ if __name__ == "__main__":
     top_100k_file = "../results/six_methods/most_frequency_words/glove_100000_most_frequency.csv"
     dir = "../results/six_methods/clusters"
     dirPDF = "../plots/six_methods/clusters"
-    # plot(embedding_100k_file,top_100k_file, dir, dirPDF)
+    plot(embedding_100k_file,top_100k_file, dir, dirPDF)
 
     embedding_100k_file = "../raw/glove_100000_most_freq_skip.txt"
     top_100k_file = "../results/openAI/most_frequency_words/openAI_100000_most_frequency.csv"
     dir = "../results/openAI/clusters"
     dirPDF = "../plots/openAI/clusters"
-    # plot(embedding_100k_file, top_100k_file, dir, dirPDF)
+    plot(embedding_100k_file, top_100k_file, dir, dirPDF)
 
     embedding_100k_file = "../raw/ft_100000_most_freq_skip.csv"
     top_100k_file = "../results/fasttext/most_frequency_words/ft_100000_most_frequency.csv"
     dir = "../results/fasttext/clusters"
     dirPDF = "../plots/fasttext/clusters"
-    # plot(embedding_100k_file, top_100k_file, dir, dirPDF)
+    plot(embedding_100k_file, top_100k_file, dir, dirPDF)
 
     embedding_100k_file = "../cohere/cohere_100000_most_freq_skip.txt"
     top_100k_file = "../results/cohere/most_frequency_words/cohere_100000_most_frequency.csv"
     dir = "../results/cohere/clusters"
     dirPDF = "../plots/cohere/clusters"
-    # plot(embedding_100k_file, top_100k_file, dir, dirPDF)
+    plot(embedding_100k_file, top_100k_file, dir, dirPDF)
 
     embedding_100k_file = "../google/google_100000_most_freq_skip.txt"
     top_100k_file = "../results/google/most_frequency_words/google_100000_most_frequency.csv"

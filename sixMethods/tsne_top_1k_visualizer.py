@@ -44,28 +44,28 @@ if __name__ == "__main__":
     tsneCSV = "../results/six_methods/clusters/tsne_dims_1k.csv"
     tsneDAT = "../results/six_methods/clusters/tsne_vis_1k.dat"
     pdf = "../plots/six_methods/tsne_top_1k/tsne.pdf"
-    # process(embedding_100k_file, top_1k, tsneCSV, tsneDAT, pdf)
+    process(embedding_100k_file, top_1k, tsneCSV, tsneDAT, pdf)
 
     embedding_100k_file = "../openAI/openAI_100000_most_freq_skip.txt"
     top_1k = "../results/openAI/most_frequency_words/openAI_1000_most_frequency.csv"
     tsneCSV = "../results/openAI/clusters/tsne_dims_1k.csv"
     tsneDAT = "../results/openAI/clusters/tsne_vis_1k.dat"
     pdf = "../plots/openAI/tsne_top_1k/tsne.pdf"
-    # process(embedding_100k_file, top_1k, tsneCSV, tsneDAT, pdf)
+    process(embedding_100k_file, top_1k, tsneCSV, tsneDAT, pdf)
 
     embedding_100k_file = "../raw/ft_100000_most_freq_skip.csv"
     top_1k = "../results/fasttext/most_frequency_words/ft_1000_most_frequency.csv"
     tsneCSV = "../results/fasttext/clusters/tsne_dims_1k.csv"
     tsneDAT = "../results/fasttext/clusters/tsne_vis_1k.dat"
     pdf = "../plots/fasttext/tsne_top_1k/tsne.pdf"
-    # process(embedding_100k_file, top_1k, tsneCSV, tsneDAT, pdf)
+    process(embedding_100k_file, top_1k, tsneCSV, tsneDAT, pdf)
 
     embedding_100k_file = "../cohere/cohere_100000_most_freq_skip.txt"
     top_1k = "../results/cohere/most_frequency_words/cohere_1000_most_frequency.csv"
     tsneCSV = "../results/cohere/clusters/tsne_dims_1k.csv"
     tsneDAT = "../results/cohere/clusters/tsne_vis_1k.dat"
     pdf = "../plots/cohere/tsne_top_1k/tsne.pdf"
-    # process(embedding_100k_file, top_1k, tsneCSV, tsneDAT, pdf)
+    process(embedding_100k_file, top_1k, tsneCSV, tsneDAT, pdf)
 
     embedding_100k_file = "../google/google_100000_most_freq_skip.txt"
     top_1k = "../results/google/most_frequency_words/google_1000_most_frequency.csv"
