@@ -61,3 +61,6 @@ if __name__ == "__main__":
 
     plot("../results/microsoft_norm/most_frequency_words/microsoft_norm_100000_most_frequency.csv",
          "../results/microsoft_norm/frequency_analysis/microsoft_norm_frequency_analysis.csv", num_columns_list)
+
+    plot("../results/BGE/most_frequency_words/BGE_100000_most_frequency.csv",
+         "../results/BGE/frequency_analysis/BGE_frequency_analysis.csv", num_columns_list)

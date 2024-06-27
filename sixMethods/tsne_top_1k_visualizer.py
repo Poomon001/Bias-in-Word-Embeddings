@@ -39,37 +39,58 @@ def process(embedding_100k_file, top_1k_file, tsneCSV, tsneDAT, pdf):
     plt.show()
 
 if __name__ == "__main__":
-    embedding_100k_file = "../raw/glove_100000_most_freq_skip.txt"
+    embedding_100k_file = "D:/Honour_Thesis_Data/raw/glove_100000_most_freq_skip.txt"
     top_1k = "../results/six_methods/most_frequency_words/glove_1000_most_frequency.csv"
     tsneCSV = "../results/six_methods/clusters/tsne_dims_1k.csv"
     tsneDAT = "../results/six_methods/clusters/tsne_vis_1k.dat"
     pdf = "../plots/six_methods/tsne_top_1k/tsne.pdf"
     process(embedding_100k_file, top_1k, tsneCSV, tsneDAT, pdf)
 
-    embedding_100k_file = "../openAI/openAI_100000_most_freq_skip.txt"
-    top_1k = "../results/openAI/most_frequency_words/openAI_1000_most_frequency.csv"
-    tsneCSV = "../results/openAI/clusters/tsne_dims_1k.csv"
-    tsneDAT = "../results/openAI/clusters/tsne_vis_1k.dat"
-    pdf = "../plots/openAI/tsne_top_1k/tsne.pdf"
-    process(embedding_100k_file, top_1k, tsneCSV, tsneDAT, pdf)
-
-    embedding_100k_file = "../raw/ft_100000_most_freq_skip.csv"
+    embedding_100k_file = "D:/Honour_Thesis_Data/raw/ft_100000_most_freq_skip.csv"
     top_1k = "../results/fasttext/most_frequency_words/ft_1000_most_frequency.csv"
     tsneCSV = "../results/fasttext/clusters/tsne_dims_1k.csv"
     tsneDAT = "../results/fasttext/clusters/tsne_vis_1k.dat"
     pdf = "../plots/fasttext/tsne_top_1k/tsne.pdf"
     process(embedding_100k_file, top_1k, tsneCSV, tsneDAT, pdf)
 
-    embedding_100k_file = "../cohere/cohere_100000_most_freq_skip.txt"
+    embedding_100k_file = "D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt"
+    top_1k = "../results/openAI/most_frequency_words/openAI_1000_most_frequency.csv"
+    tsneCSV = "../results/openAI/clusters/tsne_dims_1k.csv"
+    tsneDAT = "../results/openAI/clusters/tsne_vis_1k.dat"
+    pdf = "../plots/openAI/tsne_top_1k/tsne.pdf"
+    process(embedding_100k_file, top_1k, tsneCSV, tsneDAT, pdf)
+
+    embedding_100k_file = "D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt"
     top_1k = "../results/cohere/most_frequency_words/cohere_1000_most_frequency.csv"
     tsneCSV = "../results/cohere/clusters/tsne_dims_1k.csv"
     tsneDAT = "../results/cohere/clusters/tsne_vis_1k.dat"
     pdf = "../plots/cohere/tsne_top_1k/tsne.pdf"
     process(embedding_100k_file, top_1k, tsneCSV, tsneDAT, pdf)
 
-    embedding_100k_file = "../google/google_100000_most_freq_skip.txt"
+    embedding_100k_file = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
     top_1k = "../results/google/most_frequency_words/google_1000_most_frequency.csv"
     tsneCSV = "../results/google/clusters/tsne_dims_1k.csv"
     tsneDAT = "../results/google/clusters/tsne_vis_1k.dat"
     pdf = "../plots/google/tsne_top_1k/tsne.pdf"
+    process(embedding_100k_file, top_1k, tsneCSV, tsneDAT, pdf)
+
+    embedding_100k_file = "D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt"
+    top_1k = "../results/microsoft/most_frequency_words/microsoft_1000_most_frequency.csv"
+    tsneCSV = "../results/microsoft/clusters/tsne_dims_1k.csv"
+    tsneDAT = "../results/microsoft/clusters/tsne_vis_1k.dat"
+    pdf = "../plots/microsoft/tsne_top_1k/tsne.pdf"
+    process(embedding_100k_file, top_1k, tsneCSV, tsneDAT, pdf)
+
+    embedding_100k_file = "D:/Honour_Thesis_Data/microsoft_norm/microsoft_norm_100000_most_freq_skip.txt"
+    top_1k = "../results/microsoft_norm/most_frequency_words/microsoft_norm_1000_most_frequency.csv"
+    tsneCSV = "../results/microsoft_norm/clusters/tsne_dims_1k.csv"
+    tsneDAT = "../results/microsoft_norm/clusters/tsne_vis_1k.dat"
+    pdf = "../plots/microsoft_norm/tsne_top_1k/tsne.pdf"
+    process(embedding_100k_file, top_1k, tsneCSV, tsneDAT, pdf)
+
+    embedding_100k_file = "D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt"
+    top_1k = "../results/BGE/most_frequency_words/BGE_1000_most_frequency.csv"
+    tsneCSV = "../results/BGE/clusters/tsne_dims_1k.csv"
+    tsneDAT = "../results/BGE/clusters/tsne_vis_1k.dat"
+    pdf = "../plots/BGE/tsne_top_1k/tsne.pdf"
     process(embedding_100k_file, top_1k, tsneCSV, tsneDAT, pdf)

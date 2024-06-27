@@ -50,8 +50,8 @@ def process(inputFilename, outputFilename, k):
 if __name__ == "__main__":
     print(skip_list)
 
-    # filename = f"../raw/glove_100000_most_freq_skip.txt"
+    # filename = f"D:/Honour_Thesis_Data/raw/glove_100000_most_freq_skip.txt"
     # process("../raw/glove_120k_most_freq.txt", filename, 100000)
 
-    filename = f"../raw/ft_100000_most_freq_skip.csv"
+    filename = f"D:/Honour_Thesis_Data/raw/ft_100000_most_freq_skip.csv"
     process("../raw/ft_120k_most_freq.vec", filename, 100000)

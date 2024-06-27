@@ -119,38 +119,62 @@ if __name__ == "__main__":
     bigtech3 = "../results/openAI/big_tech/big_tech_associations_openAI.csv"
     bigtech4 = "../results/cohere/big_tech/big_tech_associations_cohere.csv"
     bigtech5 = "../results/google/big_tech/big_tech_associations_google.csv"
+    bigtech6 = "../results/microsoft/big_tech/big_tech_associations_microsoft.csv"
+    bigtech7 = "../results/microsoft_norm/big_tech/big_tech_associations_microsoft_norm.csv"
+    bigtech8 = "../results/BGE/big_tech/big_tech_associations_BGE.csv"
     largestBigTechs.append(bigtech1)
     largestBigTechs.append(bigtech2)
     largestBigTechs.append(bigtech3)
     largestBigTechs.append(bigtech4)
     largestBigTechs.append(bigtech5)
+    largestBigTechs.append(bigtech6)
+    largestBigTechs.append(bigtech7)
+    largestBigTechs.append(bigtech8)
 
-    top_100k_embeddings = "../raw/glove_100000_most_freq_skip.txt"
+    top_100k_embeddings = "D:/Honour_Thesis_Data/raw/glove_100000_most_freq_skip.txt"
     output_weats = "../results/six_methods/big_tech/glove_big_tech_weats.csv"
     output_bigtechs = "../results/six_methods/big_tech/glove_big_tech_words.txt"
     pdf = "../plots/six_methods/bigtech/glove_bigtech_ratio.pdf"
     process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf)
 
-    top_100k_embeddings = "../raw/ft_100000_most_freq_skip.csv"
+    top_100k_embeddings = "D:/Honour_Thesis_Data/raw/ft_100000_most_freq_skip.csv"
     output_weats = "../results/fasttext/big_tech/ft_big_tech_weats.csv"
     output_bigtechs = "../results/fasttext/big_tech/ft_big_tech_words.txt"
     pdf = "../plots/fasttext/bigtech/ft_bigtech_ratio.pdf"
     process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf)
 
-    top_100k_embeddings = "../openAI/openAI_100000_most_freq_skip.txt"
+    top_100k_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt"
     output_weats = "../results/openAI/big_tech/openai_big_tech_weats.csv"
     output_bigtechs = "../results/openAI/big_tech/openai_big_tech_words.txt"
     pdf = "../plots/openAI/bigtech/openai_bigtech_ratio.pdf"
     process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf)
 
-    top_100k_embeddings = "../cohere/cohere_100000_most_freq_skip.txt"
+    top_100k_embeddings = "D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt"
     output_weats = "../results/cohere/big_tech/cohere_big_tech_weats.csv"
     output_bigtechs = "../results/cohere/big_tech/cohere_big_tech_words.txt"
     pdf = "../plots/cohere/bigtech/cohere_bigtech_ratio.pdf"
     process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf)
 
-    top_100k_embeddings = "../google/google_100000_most_freq_skip.txt"
+    top_100k_embeddings = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
     output_weats = "../results/google/big_tech/google_big_tech_weats.csv"
     output_bigtechs = "../results/google/big_tech/google_big_tech_words.txt"
     pdf = "../plots/google/bigtech/google_bigtech_ratio.pdf"
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf)
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt"
+    output_weats = "../results/microsoft/big_tech/microsoft_big_tech_weats.csv"
+    output_bigtechs = "../results/microsoft/big_tech/microsoft_big_tech_words.txt"
+    pdf = "../plots/microsoft/bigtech/microsoft_bigtech_ratio.pdf"
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf)
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/microsoft_norm/microsoft_norm_100000_most_freq_skip.txt"
+    output_weats = "../results/microsoft_norm/big_tech/microsoft_norm_big_tech_weats.csv"
+    output_bigtechs = "../results/microsoft_norm/big_tech/microsoft_norm_big_tech_words.txt"
+    pdf = "../plots/microsoft_norm/bigtech/microsoft_norm_bigtech_ratio.pdf"
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf)
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt"
+    output_weats = "../results/BGE/big_tech/BGE_big_tech_weats.csv"
+    output_bigtechs = "../results/BGE/big_tech/BGE_big_tech_words.txt"
+    pdf = "../plots/BGE/bigtech/BGE_bigtech_ratio.pdf"
     process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf)

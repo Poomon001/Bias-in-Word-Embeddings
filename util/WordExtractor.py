@@ -43,7 +43,7 @@ def writeToEmbeddings(filename: str, content: str):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    content = readFrom("../raw/glove_100000_most_freq_skip.txt")
+    content = readFrom("D:/Honour_Thesis_Data/raw/glove_100000_most_freq_skip.txt")
     writeTo("../openAI/glove_english_word_100000_most_freq_skip.txt", content)
 
 

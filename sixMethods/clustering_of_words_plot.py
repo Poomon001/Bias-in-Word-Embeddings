@@ -8,7 +8,6 @@ import csv
 from sklearn.manifold import TSNE
 from matplotlib import pyplot as plt
 from sklearn.cluster import KMeans
-from sklearn.metrics import silhouette_score, davies_bouldin_score, v_measure_score
 
 def plot(embedding_100k_file, top_100k_file, dir, dirPDF):
     # Read in gender association file and get most associated female and male words
@@ -32,7 +31,6 @@ def plot(embedding_100k_file, top_100k_file, dir, dirPDF):
     print(top_female_words)
     print(top_male_words)
 
-    # TODO: Only look at the 100k embedding file used to produce the embedding_100k, does that make sense?
     embedding_df = pd.read_csv(embedding_100k_file, sep=' ', header=None, index_col=0, na_values=None, keep_default_na=False, quoting=csv.QUOTE_NONE, nrows=100000)
 
     print(embedding_df)
@@ -139,32 +137,50 @@ def plot(embedding_100k_file, top_100k_file, dir, dirPDF):
 
 
 if __name__ == "__main__":
-    embedding_100k_file = "../raw/glove_100000_most_freq_skip.txt"
+    embedding_100k_file = "D:/Honour_Thesis_Data/raw/glove_100000_most_freq_skip.txt"
     top_100k_file = "../results/six_methods/most_frequency_words/glove_100000_most_frequency.csv"
     dir = "../results/six_methods/clusters"
     dirPDF = "../plots/six_methods/clusters"
-    plot(embedding_100k_file,top_100k_file, dir, dirPDF)
+    plot(embedding_100k_file, top_100k_file, dir, dirPDF)
 
-    embedding_100k_file = "../raw/glove_100000_most_freq_skip.txt"
+    embedding_100k_file = "D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt"
     top_100k_file = "../results/openAI/most_frequency_words/openAI_100000_most_frequency.csv"
     dir = "../results/openAI/clusters"
     dirPDF = "../plots/openAI/clusters"
     plot(embedding_100k_file, top_100k_file, dir, dirPDF)
 
-    embedding_100k_file = "../raw/ft_100000_most_freq_skip.csv"
+    embedding_100k_file = "D:/Honour_Thesis_Data/raw/ft_100000_most_freq_skip.csv"
     top_100k_file = "../results/fasttext/most_frequency_words/ft_100000_most_frequency.csv"
     dir = "../results/fasttext/clusters"
     dirPDF = "../plots/fasttext/clusters"
     plot(embedding_100k_file, top_100k_file, dir, dirPDF)
 
-    embedding_100k_file = "../cohere/cohere_100000_most_freq_skip.txt"
+    embedding_100k_file = "D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt"
     top_100k_file = "../results/cohere/most_frequency_words/cohere_100000_most_frequency.csv"
     dir = "../results/cohere/clusters"
     dirPDF = "../plots/cohere/clusters"
     plot(embedding_100k_file, top_100k_file, dir, dirPDF)
 
-    embedding_100k_file = "../google/google_100000_most_freq_skip.txt"
+    embedding_100k_file = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
     top_100k_file = "../results/google/most_frequency_words/google_100000_most_frequency.csv"
     dir = "../results/google/clusters"
     dirPDF = "../plots/google/clusters"
+    plot(embedding_100k_file, top_100k_file, dir, dirPDF)
+
+    embedding_100k_file = "D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt"
+    top_100k_file = "../results/microsoft/most_frequency_words/microsoft_100000_most_frequency.csv"
+    dir = "../results/microsoft/clusters"
+    dirPDF = "../plots/microsoft/clusters"
+    plot(embedding_100k_file, top_100k_file, dir, dirPDF)
+
+    embedding_100k_file = "D:/Honour_Thesis_Data/microsoft_norm/microsoft_norm_100000_most_freq_skip.txt"
+    top_100k_file = "../results/microsoft_norm/most_frequency_words/microsoft_norm_100000_most_frequency.csv"
+    dir = "../results/microsoft_norm/clusters"
+    dirPDF = "../plots/microsoft_norm/clusters"
+    plot(embedding_100k_file, top_100k_file, dir, dirPDF)
+
+    embedding_100k_file = "D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt"
+    top_100k_file = "../results/BGE/most_frequency_words/BGE_100000_most_frequency.csv"
+    dir = "../results/BGE/clusters"
+    dirPDF = "../plots/BGE/clusters"
     plot(embedding_100k_file, top_100k_file, dir, dirPDF)
