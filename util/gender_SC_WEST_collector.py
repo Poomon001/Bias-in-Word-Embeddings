@@ -109,12 +109,6 @@ if __name__ == "__main__":
     filename = "microsoft"
     # bias_microsoft_100000 = process(raw, result, tempDir, filename)
 
-    tempDir = "../temp/microsoft_norm"
-    raw = "D:/Honour_Thesis_Data/microsoft_norm/microsoft_norm_100000_most_freq_skip.txt"
-    result = "../results/microsoft_norm/most_frequency_words/microsoft_norm_100000_most_frequency.csv"
-    filename = "microsoft_norm"
-    # bias_microsoft_norm_100000 = process(raw, result, tempDir, filename)
-
     tempDir = "../temp/BGE"
     raw = "D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt"
     result = "../results/BGE/most_frequency_words/BGE_100000_most_frequency.csv"

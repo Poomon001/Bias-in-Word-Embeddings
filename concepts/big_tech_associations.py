@@ -39,5 +39,4 @@ if __name__ == "__main__":
     process("D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt", "../results/cohere/big_tech/big_tech_associations_cohere.csv")
     process("D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt", "../results/google/big_tech/big_tech_associations_google.csv")
     process("D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt", "../results/microsoft/big_tech/big_tech_associations_microsoft.csv")
-    process("D:/Honour_Thesis_Data/microsoft_norm/microsoft_norm_100000_most_freq_skip.txt", "../results/microsoft_norm/big_tech/big_tech_associations_microsoft_norm.csv")
     process("D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt", "../results/BGE/big_tech/big_tech_associations_BGE.csv")

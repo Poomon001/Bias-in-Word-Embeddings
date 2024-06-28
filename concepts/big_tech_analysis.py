@@ -65,6 +65,8 @@ def process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs,
     big_tech = pd.DataFrame(joint_arr, index=joint, columns=['Effect_Size', 'P_Value'])
     big_tech.to_csv(output_weats)
 
+    print("Total Size:", len(big_tech))
+
     # Write big tech words to file
     words = big_tech.index.tolist()
     with open(output_bigtechs, 'w', encoding='utf-8') as writer:
@@ -74,15 +76,17 @@ def process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs,
 
     es_list = [0, .2, .5, .8]
 
-    pct_female, pct_male = [], []
+    pct_female, pct_male, actual_female_counts, actual_male_counts = [], [], [], []
 
     for es in es_list:
         print(es)
         female_df = big_tech[(big_tech.Effect_Size >= es)]
         pct_female.append(len(female_df.index.tolist()) / len(big_tech.index.tolist()))
+        actual_female_counts.append(len(female_df.index.tolist()))
 
         male_df = big_tech[(big_tech.Effect_Size <= -es)]
         pct_male.append(len(male_df.index.tolist()) / len(big_tech.index.tolist()))
+        actual_male_counts.append(len(male_df.index.tolist()))
 
     print(pct_female)
     print(pct_male)
@@ -102,6 +106,15 @@ def process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs,
     plt.xticks([i + bar_width / 2 for i in index], es_list)
     plt.legend()
 
+    # Adding numbers on top of the bars
+    for i, bar in enumerate(bars1):
+        ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height(), actual_female_counts[i],
+                ha='center', va='bottom', fontsize=8)
+
+    for i, bar in enumerate(bars2):
+        ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height(), actual_male_counts[i],
+                ha='center', va='bottom', fontsize=8)
+
     plt.tight_layout()
 
     # Save the plot as PDF
@@ -120,8 +133,7 @@ if __name__ == "__main__":
     bigtech4 = "../results/cohere/big_tech/big_tech_associations_cohere.csv"
     bigtech5 = "../results/google/big_tech/big_tech_associations_google.csv"
     bigtech6 = "../results/microsoft/big_tech/big_tech_associations_microsoft.csv"
-    bigtech7 = "../results/microsoft_norm/big_tech/big_tech_associations_microsoft_norm.csv"
-    bigtech8 = "../results/BGE/big_tech/big_tech_associations_BGE.csv"
+    bigtech7 = "../results/BGE/big_tech/big_tech_associations_BGE.csv"
     largestBigTechs.append(bigtech1)
     largestBigTechs.append(bigtech2)
     largestBigTechs.append(bigtech3)
@@ -129,7 +141,6 @@ if __name__ == "__main__":
     largestBigTechs.append(bigtech5)
     largestBigTechs.append(bigtech6)
     largestBigTechs.append(bigtech7)
-    largestBigTechs.append(bigtech8)
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/raw/glove_100000_most_freq_skip.txt"
     output_weats = "../results/six_methods/big_tech/glove_big_tech_weats.csv"
@@ -165,12 +176,6 @@ if __name__ == "__main__":
     output_weats = "../results/microsoft/big_tech/microsoft_big_tech_weats.csv"
     output_bigtechs = "../results/microsoft/big_tech/microsoft_big_tech_words.txt"
     pdf = "../plots/microsoft/bigtech/microsoft_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf)
-
-    top_100k_embeddings = "D:/Honour_Thesis_Data/microsoft_norm/microsoft_norm_100000_most_freq_skip.txt"
-    output_weats = "../results/microsoft_norm/big_tech/microsoft_norm_big_tech_weats.csv"
-    output_bigtechs = "../results/microsoft_norm/big_tech/microsoft_norm_big_tech_words.txt"
-    pdf = "../plots/microsoft_norm/bigtech/microsoft_norm_bigtech_ratio.pdf"
     process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf)
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt"

@@ -102,3 +102,44 @@ Model: BAAI/bge-m3-unsupervised
 
 Document: https://huggingface.co/BAAI/bge-m3
 Document: https://huggingface.co/BAAI/bge-m3-unsupervised
+
+#  Cluster Generation
+## 1. clustering prompt: 
+
+input the cluster of male/female words with the following prompt to ChatGPT 4 and Gemini
+```bash
+Cluster 0: Cache, Cherry, Chill, ...
+Cluster 1: Alice, Amanda, Angela, ...
+Cluster 2: Autumn, Cottage, Kitchen, ...
+Cluster 3: Fashion, Flower, Frequency, ...
+Cluster 4: Adventure, Emergency, Holiday, ...
+Cluster 5: Artists, Dogs, Scholars, ...
+Cluster 6: Computers, Families, Holidays, ...
+Cluster 7: Beautiful, Daughter, Queen, ...
+Cluster 8: Celebration, Evaluation, Upgrade, ...
+Cluster 9: Dancing, Design, Dinner, ...
+Cluster 10: Counseling, Happiness, Laser, ...
+
+For each cluster of words, assign an appropriate unique concept such as Sports, Health and Relationships, Female Names, or Engineering and Electronics.
+Output in json e.g {"0":title}
+```
+
+## Storage:
+
+Store the result in a JSon for a later use
+```bash
+{
+    "0": "General Descriptors and Objects",
+    "1": "Female Names",
+    "2": "Seasons, Home, and Food",
+    "3": "Textiles and Household Items",
+    "4": "Organizations, Events, and Technology",
+    "5": "Various Nouns and Activities",
+    "6": "Common Nouns and Activities",
+    "7": "Female and Beauty-related Terms",
+    "8": "Administrative and Enhancement Terms",
+    "9": "Various Descriptors and Nouns",
+    "10": "Assistance, Technology, and Household Items"
+}
+```
+

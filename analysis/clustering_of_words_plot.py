@@ -173,12 +173,6 @@ if __name__ == "__main__":
     dirPDF = "../plots/microsoft/clusters"
     plot(embedding_100k_file, top_100k_file, dir, dirPDF)
 
-    embedding_100k_file = "D:/Honour_Thesis_Data/microsoft_norm/microsoft_norm_100000_most_freq_skip.txt"
-    top_100k_file = "../results/microsoft_norm/most_frequency_words/microsoft_norm_100000_most_frequency.csv"
-    dir = "../results/microsoft_norm/clusters"
-    dirPDF = "../plots/microsoft_norm/clusters"
-    plot(embedding_100k_file, top_100k_file, dir, dirPDF)
-
     embedding_100k_file = "D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt"
     top_100k_file = "../results/BGE/most_frequency_words/BGE_100000_most_frequency.csv"
     dir = "../results/BGE/clusters"
