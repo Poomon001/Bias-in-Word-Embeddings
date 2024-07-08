@@ -47,12 +47,12 @@ def plot(dat, pdf, clusterToTopic, title):
     plt.show()
 
 if __name__ == "__main__":
-    femaleDat = "../results/six_methods/clusters/tsne_clusters_female_male_vis_elkan_11.dat"
-    maleDat = "../results/six_methods/clusters/tsne_clusters_male_male_vis_elkan_11.dat"
-    malePDF = "../plots/six_methods/clusters/male_clusters.pdf"
-    femalePDF = "../plots/six_methods/clusters/female_clusters.pdf"
-    maleClusterToTopic = "../results/six_methods/clusters/male_clusters_to_topics.json"
-    femaleClusterToTopic = "../results/six_methods/clusters/female_clusters_to_topics.json"
+    femaleDat = "../results/glove/clusters/tsne_clusters_female_male_vis_elkan_11.dat"
+    maleDat = "../results/glove/clusters/tsne_clusters_male_male_vis_elkan_11.dat"
+    malePDF = "../plots/glove/clusters/male_clusters.pdf"
+    femalePDF = "../plots/glove/clusters/female_clusters.pdf"
+    maleClusterToTopic = "../results/glove/clusters/male_clusters_to_topics.json"
+    femaleClusterToTopic = "../results/glove/clusters/female_clusters_to_topics.json"
 
     plot(maleDat, malePDF, maleClusterToTopic, "Male Scatter Plot of Words by Cluster")
     plot(femaleDat, femalePDF, femaleClusterToTopic, "Female Scatter Plot of Words by Cluster")

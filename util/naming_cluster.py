@@ -84,12 +84,12 @@ if __name__ == "__main__":
     output = "../results/microsoft/clusters/female_clusters_to_topics.txt"
     process(clusterToTopic, input, output)
 
-    clusterToTopic = "../results/six_methods/clusters/male_clusters_to_topics.json"
-    input = "../results/six_methods/clusters/male_clusters_11.txt"
-    output = "../results/six_methods/clusters/male_clusters_to_topics.txt"
+    clusterToTopic = "../results/glove/clusters/male_clusters_to_topics.json"
+    input = "../results/glove/clusters/male_clusters_11.txt"
+    output = "../results/glove/clusters/male_clusters_to_topics.txt"
     process(clusterToTopic, input, output)
 
-    clusterToTopic = "../results/six_methods/clusters/female_clusters_to_topics.json"
-    input = "../results/six_methods/clusters/female_clusters_11.txt"
-    output = "../results/six_methods/clusters/female_clusters_to_topics.txt"
+    clusterToTopic = "../results/glove/clusters/female_clusters_to_topics.json"
+    input = "../results/glove/clusters/female_clusters_11.txt"
+    output = "../results/glove/clusters/female_clusters_to_topics.txt"
     process(clusterToTopic, input, output)

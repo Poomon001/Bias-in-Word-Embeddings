@@ -127,7 +127,7 @@ def process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs,
 
 if __name__ == "__main__":
     largestBigTechs = []
-    bigtech1 = "../results/six_methods/big_tech/big_tech_associations_glove.csv"
+    bigtech1 = "../results/glove/big_tech/big_tech_associations_glove.csv"
     bigtech2 = "../results/fasttext/big_tech/big_tech_associations_ft.csv"
     bigtech3 = "../results/openAI/big_tech/big_tech_associations_openAI.csv"
     bigtech4 = "../results/cohere/big_tech/big_tech_associations_cohere.csv"
@@ -143,9 +143,9 @@ if __name__ == "__main__":
     largestBigTechs.append(bigtech7)
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/raw/glove_100000_most_freq_skip.txt"
-    output_weats = "../results/six_methods/big_tech/glove_big_tech_weats.csv"
-    output_bigtechs = "../results/six_methods/big_tech/glove_big_tech_words.txt"
-    pdf = "../plots/six_methods/bigtech/glove_bigtech_ratio.pdf"
+    output_weats = "../results/glove/big_tech/glove_big_tech_weats.csv"
+    output_bigtechs = "../results/glove/big_tech/glove_big_tech_words.txt"
+    pdf = "../plots/glove/bigtech/glove_bigtech_ratio.pdf"
     process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf)
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/raw/ft_100000_most_freq_skip.csv"

@@ -25,10 +25,10 @@ Download the full NRC-VAD-Lexicon file (`NRC-VAD-Lexicon.txt`) from the official
 
 ## 4. Product ft_100k.csv and glove_100k.txt
 
-Select the 120k most frequency from glove.840B.300d.txt
+Select the 500k most frequency from glove.840B.300d.txt
 
 ```bash
-head -n 120000 glove.840B.300d.txt > glove_120k_most_freq.txt
+head -n 500000 glove.840B.300d.txt > > glove_500k_most_freq.txt
 ```
 
 ## 5. Product any _1000*most*_.ext files
@@ -142,4 +142,22 @@ Store the result in a JSon for a later use
     "10": "Assistance, Technology, and Household Items"
 }
 ```
+
+# Stimuli Source
+## Gender
+based off the past research paper
+
+## Race
+Selected based on:
+
+1. based off the GPT-4.0 genrator with the prompt
+```bash
+female_stimuli = ["female", "she", "her", "hers", "woman", "girl", "daughter", "sister"]
+male_stimuli = ["male", "he", "him", "his", "man", "boy", "son", "brother"]
+
+If these are male and female stemuli. What should be stimuli for White, Black and Asian races?
+```
+
+2. Top highest population
+
 

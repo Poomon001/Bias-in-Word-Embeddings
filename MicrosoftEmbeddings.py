@@ -8,7 +8,7 @@ tokenizer = AutoTokenizer.from_pretrained('intfloat/e5-large-v2')
 model = AutoModel.from_pretrained('intfloat/e5-large-v2')
 
 # get word list
-WORDS_FILE = "openAI/glove_english_word_100000_most_freq_skip.txt"
+WORDS_FILE = "raw/glove_english_word_100000_most_freq_skip.txt"
 word_list = []
 
 def get_word_list():
@@ -49,4 +49,4 @@ if __name__ == "__main__":
         print(f"completed: ", i)
 
     # without normalization
-    writeTo("microsoft/microsoft_100000_most_freq_skip.txt", all_results)
+    writeTo("D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt", all_results)

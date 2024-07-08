@@ -2,7 +2,8 @@ from FlagEmbedding import BGEM3FlagModel
 
 model = BGEM3FlagModel('BAAI/bge-m3-unsupervised',  use_fp16=True) # Setting use_fp16 to True speeds up computation with a slight performance degradation
 
-WORDS_FILE = "openAI/glove_english_word_100000_most_freq_skip.txt"
+WORDS_FILE = "raw/glove_english_word_100000_most_freq_skip.txt"
+RACE_WORDS_FILE = "raw/race_glove_english_word_100000_most_freq_skip.txt"
 word_list = []
 
 def get_word_list():
@@ -36,4 +37,6 @@ if __name__ == '__main__':
         all_results.extend(embeddings)
         print(f"completed: ", i)
 
-    writeTo("BGE/BGE_100000_most_freq_skip.txt", all_results)
+    writeTo("D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt", all_results)
+
+

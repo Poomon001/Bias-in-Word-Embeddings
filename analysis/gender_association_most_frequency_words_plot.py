@@ -64,37 +64,37 @@ def plot(input, output, num_columns_list, name):
 
 if __name__ == "__main__":
     num_columns_list = [100, 1000, 10000, 100000]
-    input = "../results/six_methods/most_frequency_words/glove_100000_most_frequency.csv"
-    output = "../plots/six_methods/most_frequency_words/glove_frequency_ratio.pdf"
+    input = "../results/glove/most_frequency_words/glove_gender_100000_most_frequency.csv"
+    output = "../plots/glove/most_frequency_words/glove_frequency_ratio.pdf"
     name = "GloVe"
-    plot(input, output, num_columns_list, name)
+    # plot(input, output, num_columns_list, name)
 
-    input = "../results/openAI/most_frequency_words/openAI_100000_most_frequency.csv"
+    input = "../results/openAI/most_frequency_words/openAI_gender_100000_most_frequency.csv"
     output =  "../plots/openAI/most_frequency_words/openai_frequency_ratio.pdf"
     name = "OpenAI"
-    plot(input, output, num_columns_list, name)
+    # plot(input, output, num_columns_list, name)
 
-    input = "../results/fasttext/most_frequency_words/ft_100000_most_frequency.csv"
+    input = "../results/fasttext/most_frequency_words/ft_gender_100000_most_frequency.csv"
     output = "../plots/fasttext/most_frequency_words/ft_frequency_ratio.pdf"
     name = "FastText"
-    plot(input, output, num_columns_list, name)
+    # plot(input, output, num_columns_list, name)
 
     input = "../results/cohere/most_frequency_words/cohere_100000_most_frequency.csv"
     output = "../plots/cohere/most_frequency_words/cohere_frequency_ratio.pdf"
     name = "Cohere"
-    plot(input, output, num_columns_list, name)
+    # plot(input, output, num_columns_list, name)
 
     input = "../results/google/most_frequency_words/google_100000_most_frequency.csv"
     output = "../plots/google/most_frequency_words/google_frequency_ratio.pdf"
     name = "Google"
-    plot(input, output, num_columns_list, name)
+    # plot(input, output, num_columns_list, name)
 
     input = "../results/microsoft/most_frequency_words/microsoft_100000_most_frequency.csv"
     output = "../plots/microsoft/most_frequency_words/microsoft_frequency_ratio.pdf"
     name = "Microsoft"
-    plot(input, output, num_columns_list, name)
+    # plot(input, output, num_columns_list, name)
 
     input = "../results/BGE/most_frequency_words/BGE_100000_most_frequency.csv"
     output = "../plots/BGE/most_frequency_words/BGE_frequency_ratio.pdf"
     name = "BGE"
-    plot(input, output, num_columns_list, name)
+    # plot(input, output, num_columns_list, name)

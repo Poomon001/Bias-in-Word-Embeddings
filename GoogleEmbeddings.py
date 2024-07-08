@@ -16,7 +16,7 @@ DIMENSION = 300
 vertexai.init(project=PROJECT_ID, location=REGION)
 
 # get word list
-WORDS_FILE = "openAI/glove_english_word_100000_most_freq_skip.txt"
+WORDS_FILE = "raw/glove_english_word_100000_most_freq_skip.txt"
 word_list = []
 
 def get_word_list():
@@ -69,7 +69,7 @@ if __name__ == "__main__":
 
     # Write all results to a file once all chunks are processed
     input_directory = "temp/google_embeddings"
-    output_filename = "google/google_100000_most_freq_skip.txt"
+    output_filename = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
     num_files = 400
     concatenateFiles(input_directory, output_filename, num_files)
 

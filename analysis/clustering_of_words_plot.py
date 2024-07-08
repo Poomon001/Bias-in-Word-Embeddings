@@ -138,9 +138,9 @@ def plot(embedding_100k_file, top_100k_file, dir, dirPDF):
 
 if __name__ == "__main__":
     embedding_100k_file = "D:/Honour_Thesis_Data/raw/glove_100000_most_freq_skip.txt"
-    top_100k_file = "../results/six_methods/most_frequency_words/glove_100000_most_frequency.csv"
-    dir = "../results/six_methods/clusters"
-    dirPDF = "../plots/six_methods/clusters"
+    top_100k_file = "../results/glove/most_frequency_words/glove_100000_most_frequency.csv"
+    dir = "../glove/glove/clusters"
+    dirPDF = "../plots/glove/clusters"
     plot(embedding_100k_file, top_100k_file, dir, dirPDF)
 
     embedding_100k_file = "D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt"

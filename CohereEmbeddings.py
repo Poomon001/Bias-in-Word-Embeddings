@@ -8,7 +8,7 @@ api_key = os.getenv("API_KEY_COHERE")
 co = cohere.Client(api_key=api_key)
 
 
-WORDS_FILE = "openAI/glove_english_word_100000_most_freq_skip.txt"
+WORDS_FILE = "raw/glove_english_word_100000_most_freq_skip.txt"
 word_list = []
 
 def get_word_list():
@@ -44,7 +44,7 @@ if __name__ == '__main__':
     word_list = get_word_list()
     all_results = []
 
-    for i in range(35000, len(word_list), STEP):
+    for i in range(22500, len(word_list), STEP):
         chunk = word_list[i:i + STEP]
 
         response = co.embed(
@@ -66,6 +66,6 @@ if __name__ == '__main__':
 
     # Write all results to a file once all chunks are processed
     input_directory = "temp/cohere_embeddings"
-    output_filename = "cohere/cohere_100000_most_freq_skip.txt"
+    output_filename = "D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt"
     num_files = 40
     concatenateFiles(input_directory, output_filename, num_files)

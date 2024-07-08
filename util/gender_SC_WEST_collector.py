@@ -38,10 +38,10 @@ def process(embeddingInoutPath, resultOutputPath, tempDir, filename):
     # Save embeddings to CSV files
     try:
         female_embeddings_df = pd.DataFrame(female_embeddings)
-        female_embeddings_df.to_csv('../results/six_methods/most_frequency_words/female_embeddings.csv', index=False, header=False)
+        female_embeddings_df.to_csv('../results/glove/most_frequency_words/female_embeddings.csv', index=False, header=False)
 
         male_embeddings_df = pd.DataFrame(male_embeddings)
-        male_embeddings_df.to_csv('../results/six_methods/most_frequency_words/male_embeddings.csv', index=False, header=False)
+        male_embeddings_df.to_csv('../results/glove/most_frequency_words/male_embeddings.csv', index=False, header=False)
 
         print("CSV files saved successfully.")
     except Exception as e:
@@ -74,43 +74,44 @@ def process(embeddingInoutPath, resultOutputPath, tempDir, filename):
 if __name__ == "__main__":
     tempDir = "../temp/glove"
     raw = "D:/Honour_Thesis_Data/raw/glove_100000_most_freq_skip.txt"
-    result = "../results/six_methods/most_frequency_words/glove_100000_most_frequency.csv"
+    result = "../results/glove/most_frequency_words/glove_gender_100000_most_frequency.csv"
     filename = "glove"
     # bias_glove_100000 = process(raw, result, tempDir, filename)
 
-    tempDir = "../temp/openai"
-    raw = "D:/Honour_Thesis_Data/openAI/openAI_100000_skip.txt"
-    result = "../results/openAI/most_frequency_words/openAI_100000_most_frequency.csv"
-    filename = "openai"
-    # bias_openAI_100000 = process(raw, result, tempDir, filename)
-
     tempDir = "../temp/fasttext"
     raw = "D:/Honour_Thesis_Data/raw/ft_100000_most_freq_skip.csv"
-    result = "../results/fasttext/most_frequency_words/ft_100000_most_frequency.csv"
+    result = "../results/fasttext/most_frequency_words/ft_gender_100000_most_frequency.csv"
     tempDir = "../temp/fasttext"
     filename = "ft"
     # bias_ft_100000 = process(raw, result, tempDir, filename)
 
+    tempDir = "../temp/openai"
+    raw = "D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt"
+    result = "../results/openAI/most_frequency_words/openAI_gender_100000_most_frequency.csv"
+    filename = "openai"
+    # bias_openAI_100000 = process(raw, result, tempDir, filename)
+
     tempDir = "../temp/cohere"
     raw = "D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt"
-    result = "../results/cohere/most_frequency_words/cohere_100000_most_frequency.csv"
+    result = "../results/cohere/most_frequency_words/cohere_gender_100000_most_frequency.csv"
     filename = "cohere"
     # bias_cohere_100000 = process(raw, result, tempDir, filename)
 
     tempDir = "../temp/google"
     raw = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
-    result = "../results/google/most_frequency_words/google_100000_most_frequency.csv"
+    result = "../results/google/most_frequency_words/google_gender_100000_most_frequency.csv"
     filename = "google"
     # bias_google_100000 = process(raw, result, tempDir, filename)
 
     tempDir = "../temp/microsoft"
     raw = "D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt"
-    result = "../results/microsoft/most_frequency_words/microsoft_100000_most_frequency.csv"
+    result = "../results/microsoft/most_frequency_words/microsoft_gender_100000_most_frequency.csv"
     filename = "microsoft"
-    # bias_microsoft_100000 = process(raw, result, tempDir, filename)
+    bias_microsoft_100000 = process(raw, result, tempDir, filename)
 
+    #TODO: manaully do it this time
     tempDir = "../temp/BGE"
     raw = "D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt"
-    result = "../results/BGE/most_frequency_words/BGE_100000_most_frequency.csv"
+    result = "../results/BGE/most_frequency_words/BGE_gender_100000_most_frequency.csv"
     filename = "BGE"
-    bias_BGE_100000 = process(raw, result, tempDir, filename)
+    # bias_BGE_100000 = process(raw, result, tempDir, filename)

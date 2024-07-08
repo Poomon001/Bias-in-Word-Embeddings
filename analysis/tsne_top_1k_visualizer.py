@@ -40,10 +40,10 @@ def process(embedding_100k_file, top_1k_file, tsneCSV, tsneDAT, pdf):
 
 if __name__ == "__main__":
     embedding_100k_file = "D:/Honour_Thesis_Data/raw/glove_100000_most_freq_skip.txt"
-    top_1k = "../results/six_methods/most_frequency_words/glove_1000_most_frequency.csv"
-    tsneCSV = "../results/six_methods/clusters/tsne_dims_1k.csv"
-    tsneDAT = "../results/six_methods/clusters/tsne_vis_1k.dat"
-    pdf = "../plots/six_methods/tsne_top_1k/tsne.pdf"
+    top_1k = "../results/glove/most_frequency_words/glove_1000_most_frequency.csv"
+    tsneCSV = "../results/glove/clusters/tsne_dims_1k.csv"
+    tsneDAT = "../results/glove/clusters/tsne_vis_1k.dat"
+    pdf = "../plots/glove/tsne_top_1k/tsne.pdf"
     process(embedding_100k_file, top_1k, tsneCSV, tsneDAT, pdf)
 
     embedding_100k_file = "D:/Honour_Thesis_Data/raw/ft_100000_most_freq_skip.csv"
