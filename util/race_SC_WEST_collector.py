@@ -78,59 +78,82 @@ if __name__ == "__main__":
     raw = "D:/Honour_Thesis_Data/raw/glove_100000_most_freq_skip.txt"
     filename = "glove_BW"
     result = "../results/glove/most_frequency_words/glove_race_WB_100000_most_frequency.csv"
-    # bias_glove_100000 = process(raw, result, tempDir, filename, white_stimuli, black_stimuli)
+    bias_glove_100000 = process(raw, result, tempDir, filename, white_stimuli, black_stimuli)
     filename = "glove_WA"
     result = "../results/glove/most_frequency_words/glove_race_WA_100000_most_frequency.csv"
-    # bias_glove_100000 = process(raw, result, tempDir, filename, white_stimuli, asian_stimuli)
+    bias_glove_100000 = process(raw, result, tempDir, filename, white_stimuli, asian_stimuli)
     filename = "glove_AB"
     result = "../results/glove/most_frequency_words/glove_race_AB_100000_most_frequency.csv"
-    # bias_glove_100000 = process(raw, result, tempDir, filename, asian_stimuli, black_stimuli)
+    bias_glove_100000 = process(raw, result, tempDir, filename, asian_stimuli, black_stimuli)
 
     tempDir = "../temp/fasttext"
     raw = "D:/Honour_Thesis_Data/raw/ft_100000_most_freq_skip.csv"
     filename = "ft_BW"
     result = "../results/fasttext/most_frequency_words/ft_race_WB_100000_most_frequency.csv"
-    # bias_ft_100000 = process(raw, result, tempDir, filename, white_stimuli, black_stimuli)
+    bias_ft_100000 = process(raw, result, tempDir, filename, white_stimuli, black_stimuli)
     filename = "ft_WA"
     result = "../results/fasttext/most_frequency_words/ft_race_WA_100000_most_frequency.csv"
-    # bias_glove_100000 = process(raw, result, tempDir, filename, white_stimuli, asian_stimuli)
+    bias_glove_100000 = process(raw, result, tempDir, filename, white_stimuli, asian_stimuli)
     filename = "ft_AB"
     result = "../results/fasttext/most_frequency_words/ft_race_AB_100000_most_frequency.csv"
-    # bias_glove_100000 = process(raw, result, tempDir, filename, asian_stimuli, black_stimuli)
+    bias_glove_100000 = process(raw, result, tempDir, filename, asian_stimuli, black_stimuli)
 
     tempDir = "../temp/openai"
     raw = "D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt"
     result = "../results/openAI/most_frequency_words/openAI_race_WB_100000_most_frequency.csv"
     filename = "openai_BW"
-    # bias_openAI_100000 = process(raw, result, tempDir, filename, white_stimuli, black_stimuli)
+    bias_openAI_100000 = process(raw, result, tempDir, filename, white_stimuli, black_stimuli)
     filename = "openai_WA"
     result = "../results/openAI/most_frequency_words/openAI_race_WA_100000_most_frequency.csv"
-    # bias_openAI_100000 = process(raw, result, tempDir, filename, white_stimuli, asian_stimuli)
+    bias_openAI_100000 = process(raw, result, tempDir, filename, white_stimuli, asian_stimuli)
     filename = "openai_AB"
     result = "../results/openAI/most_frequency_words/openAI_race_AB_100000_most_frequency.csv"
-    # bias_openAI_100000 = process(raw, result, tempDir, filename, asian_stimuli, black_stimuli)
+    bias_openAI_100000 = process(raw, result, tempDir, filename, asian_stimuli, black_stimuli)
 
-    # tempDir = "../temp/cohere"
-    # raw = "D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt"
-    # result = "../results/cohere/most_frequency_words/cohere_gender_100000_most_frequency.csv"
-    # filename = "cohere"
-    # # bias_cohere_100000 = process(raw, result, tempDir, filename)
-    #
-    # tempDir = "../temp/google"
-    # raw = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
-    # result = "../results/google/most_frequency_words/google_gender_100000_most_frequency.csv"
-    # filename = "google"
-    # # bias_google_100000 = process(raw, result, tempDir, filename)
-    #
-    # tempDir = "../temp/microsoft"
-    # raw = "D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt"
-    # result = "../results/microsoft/most_frequency_words/microsoft_gender_100000_most_frequency.csv"
-    # filename = "microsoft"
-    # # bias_microsoft_100000 = process(raw, result, tempDir, filename)
-    #
-    # #TODO: manaully do it this time
-    # tempDir = "../temp/BGE"
-    # raw = "D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt"
-    # result = "../results/BGE/most_frequency_words/BGE_gender_100000_most_frequency.csv"
-    # filename = "BGE"
-    # # bias_BGE_100000 = process(raw, result, tempDir, filename)
+    tempDir = "../temp/cohere"
+    raw = "D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt"
+    result = "../results/cohere/most_frequency_words/cohere_race_WB_100000_most_frequency.csv"
+    filename = "cohere_BW"
+    bias_cohere_100000 = process(raw, result, tempDir, filename, white_stimuli, black_stimuli)
+    filename = "cohere_WA"
+    result = "../results/cohere/most_frequency_words/cohere_race_WA_100000_most_frequency.csv"
+    bias_cohere_100000 = process(raw, result, tempDir, filename, white_stimuli, asian_stimuli)
+    filename = "cohere_AB"
+    result = "../results/cohere/most_frequency_words/cohere_race_AB_100000_most_frequency.csv"
+    bias_cohere_100000 = process(raw, result, tempDir, filename, asian_stimuli, black_stimuli)
+
+    tempDir = "../temp/google"
+    raw = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
+    result = "../results/google/most_frequency_words/google_race_WB_100000_most_frequency.csv"
+    filename = "google_BW"
+    bias_google_100000 = process(raw, result, tempDir, filename, white_stimuli, black_stimuli)
+    filename = "google_WA"
+    result = "../results/google/most_frequency_words/google_race_WA_100000_most_frequency.csv"
+    bias_google_100000 = process(raw, result, tempDir, filename, white_stimuli, asian_stimuli)
+    filename = "google_AB"
+    result = "../results/google/most_frequency_words/google_race_AB_100000_most_frequency.csv"
+    bias_google_100000 = process(raw, result, tempDir, filename, asian_stimuli, black_stimuli)
+
+    tempDir = "../temp/microsoft"
+    raw = "D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt"
+    result = "../results/microsoft/most_frequency_words/microsoft_race_WB_100000_most_frequency.csv"
+    filename = "microsoft_BW"
+    bias_microsoft_100000 = process(raw, result, tempDir, filename, white_stimuli, black_stimuli)
+    filename = "microsoft_WA"
+    result = "../results/microsoft/most_frequency_words/microsoft_race_WA_100000_most_frequency.csv"
+    bias_microsoft_100000 = process(raw, result, tempDir, filename, white_stimuli, asian_stimuli)
+    filename = "microsoft_AB"
+    result = "../results/microsoft/most_frequency_words/microsoft_race_AB_100000_most_frequency.csv"
+    bias_microsoft_100000 = process(raw, result, tempDir, filename, asian_stimuli, black_stimuli)
+
+    tempDir = "../temp/BGE"
+    raw = "D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt"
+    result = "../results/BGE/most_frequency_words/BGE_race_WB_100000_most_frequency.csv"
+    filename = "BGE_BW"
+    bias_BGE_100000 = process(raw, result, tempDir, filename, white_stimuli, black_stimuli)
+    filename = "BGE_WA"
+    result = "../results/BGE/most_frequency_words/BGE_race_WA_100000_most_frequency.csv"
+    bias_BGE_100000 = process(raw, result, tempDir, filename, white_stimuli, asian_stimuli)
+    filename = "BGE_AB"
+    result = "../results/BGE/most_frequency_words/BGE_race_AB_100000_most_frequency.csv"
+    bias_BGE_100000 = process(raw, result, tempDir, filename, asian_stimuli, black_stimuli)

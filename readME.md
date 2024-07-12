@@ -43,7 +43,7 @@ Example 2 .csv:
 Need a header row = 1 + 1000 rows
 
 ```bash
-head -n 1001 glove_100000_most_frequency.csv > glove_1000_most_frequency.csv
+head -n 1001 glove_gender_100000_most_frequency.csv > glove_gender_1000_most_frequency.csv
 ```
 
 # Models

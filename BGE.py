@@ -29,7 +29,7 @@ if __name__ == '__main__':
     for i in range(0, len(word_list), STEP):
         chunk = word_list[i:i + STEP]
 
-        embeddings = model.encode(word_list,
+        embeddings = model.encode(chunk,
                         batch_size=12,
                         max_length=512,
                         )['dense_vecs']
