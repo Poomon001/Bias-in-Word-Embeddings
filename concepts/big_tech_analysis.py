@@ -127,20 +127,16 @@ def process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs,
 
 if __name__ == "__main__":
     largestBigTechs = []
-    bigtech1 = "../results/glove/big_tech/big_tech_associations_glove.csv"
-    bigtech2 = "../results/fasttext/big_tech/big_tech_associations_ft.csv"
-    bigtech3 = "../results/openAI/big_tech/big_tech_associations_openAI.csv"
-    bigtech4 = "../results/cohere/big_tech/big_tech_associations_cohere.csv"
-    bigtech5 = "../results/google/big_tech/big_tech_associations_google.csv"
-    bigtech6 = "../results/microsoft/big_tech/big_tech_associations_microsoft.csv"
-    bigtech7 = "../results/BGE/big_tech/big_tech_associations_BGE.csv"
+    bigtech1 = "../results/openAI/big_tech/big_tech_associations_openAI.csv"
+    bigtech2 = "../results/cohere/big_tech/big_tech_associations_cohere.csv"
+    bigtech3 = "../results/google/big_tech/big_tech_associations_google.csv"
+    bigtech4 = "../results/microsoft/big_tech/big_tech_associations_microsoft.csv"
+    bigtech5 = "../results/BGE/big_tech/big_tech_associations_BGE.csv"
     largestBigTechs.append(bigtech1)
     largestBigTechs.append(bigtech2)
     largestBigTechs.append(bigtech3)
     largestBigTechs.append(bigtech4)
     largestBigTechs.append(bigtech5)
-    largestBigTechs.append(bigtech6)
-    largestBigTechs.append(bigtech7)
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/raw/glove_100000_most_freq_skip.txt"
     output_weats = "../results/glove/big_tech/glove_big_tech_weats.csv"
