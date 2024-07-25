@@ -1,0 +1,11 @@
+Cluster 0:Ebola, Eritrea, Eritrean, Ethiopia, Ethiopian, Ethiopians, Ethnography, Tbilisi, Yemeni
+Cluster 1:Gambia, Ghana, Ghanaian, Juba, Liberia, Rwanda, Senegal, Swaziland, Tanzania, Tanzanian, Uganda, Ugandan, Zaire, Zambia, Zambian, Zamboanga, Zamboni, Zanzibar, Zenyatta, Zimbabwe
+Cluster 2:Abidjan, Abou, Abuja, Adebayor, Aquino, ATENOLOL, Benin, Burkina, Chania, Jeju, Menifee, Oblivion, Ojibwe
+Cluster 3:Brunei, Cameroon, Djibouti, Fiji, Fijian, Guinea, Guineas, Guyana, Kiribati, Kuwaiti, Lesbos, Madagascar, Malawi, Maldives, Mali, Manitou, Marrakech, Marrakesh, Mauritania, Mauritius, Micronesia, Mogadishu, Moriah, Roatan
+Cluster 4:Cairo, ElBaradei, Habakkuk, Harare, Hassan, Hossain, Hossein, Hurghada, Jeroboam, Khaled, Khalifa, Khartoum, Khatami, Kratos, Mohamed, Mubarak, Mujahideen, Nablus, Omarion, Qaddafi, Qaeda
+Cluster 5:Arequipa, Bamako, Burmese, Cambodia, Choate, congo, Kampala, Karoo, Kenya, KENYA, Kenyatta, Khmer, Kilimanjaro, Krabi, Limpopo, Mandela, Mindanao, Mogwai, Molokai, Mombasa, mongering, Mongoose, Mozambique, Museveni, Ngorongoro, Phnom, Togo, Toowoomba
+Cluster 6:Aquinas, HAMP, HANA, Hoses, Hosni, Hyena, Hynes, Hypnotherapy, Hythe, Xenia
+Cluster 7:Albania, Antigua, Benghazi, Bogota, Giza, Lankan, Libya, Libyan, Libyans, Rican, Sylvania, Synagogue, Tirana, Tunis, Yahtzee
+Cluster 8:Alger, Algeria, Algernon, Naboo, Nairobi, Namibia, Namibian, NFP, Nicaragua, Nicaraguan, Niger, nigeria, NIGERIA, nigerian, Nineveh, Noriega, Nubian, Nymphos, Sinai
+Cluster 9:Deuteronomy, LTTE, Tibet, Tibetan, Tibetans, Tigris, Timbuktu, tribalism, Tripoli
+Cluster 10:Mesopotamia, Mesopotamian, Samoan, Somali, Somalia, Somaliland, Somalis, Soweto, Sudan, Sulawesi

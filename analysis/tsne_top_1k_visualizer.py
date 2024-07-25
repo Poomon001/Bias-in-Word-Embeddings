@@ -196,7 +196,7 @@ if __name__ == "__main__":
 
     print("Finish second race class process")
 
-    groups = ["female", "black"]
+    groups = ["asian", "black"]
     embedding_100k_file = "D:/Honour_Thesis_Data/raw/glove_100000_most_freq_skip.txt"
     top_1k = "../results/glove/most_frequency_words/glove_race_AB_1000_most_frequency.csv"
     tsneCSV = "../results/glove/clusters/race_AB_tsne_dims_1k.csv"

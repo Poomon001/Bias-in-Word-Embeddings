@@ -105,8 +105,8 @@ Document: https://huggingface.co/BAAI/bge-m3-unsupervised
 
 #  Cluster Generation
 ## 1. clustering prompt: 
-
-input the cluster of male/female words with the following prompt to ChatGPT 4 and Gemini
+### Generate group_clusters_to_topics.json
+Input the cluster of words from group1_over_group2_clusters_11.txt to ChatGPT 4 and Gemini with the following prompt:
 ```bash
 Cluster 0: Cache, Cherry, Chill, ...
 Cluster 1: Alice, Amanda, Angela, ...
