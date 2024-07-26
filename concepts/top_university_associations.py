@@ -11,6 +11,7 @@ def process(top_100k_embeddings, top_50_university_embeddings, result):
     top_50_embedding_df = pd.read_csv(top_50_university_embeddings, sep=',', header=0, index_col=0)
     top_100k_embedding_df.columns = top_50_embedding_df.columns
 
+    # Ensure that the concatenation of top_50_embedding_df and top_100k_embedding_df maintains unique elements
     embedding_df = pd.concat([top_100k_embedding_df, top_50_embedding_df])
 
     # Get mean cosine similarities with Big Tech words
@@ -56,3 +57,7 @@ if __name__ == "__main__":
     process("D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt",
             "D:/Honour_Thesis_Data/microsoft/microsoft_top_50_universities.csv",
             "../results/microsoft/top_university/top_university_associations_microsoft.csv")
+
+    process("D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt",
+            "D:/Honour_Thesis_Data/openAI/openAI_top_50_universities.csv",
+            "../results/openAI/top_university/top_university_associations_openAI.csv")

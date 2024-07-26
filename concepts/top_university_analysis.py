@@ -32,6 +32,7 @@ def process(top_100k_embeddings, top_50_university_embeddings, top_universities,
     top_50_embedding_df = pd.read_csv(top_50_university_embeddings, sep=',', header=0, index_col=0)
     top_100k_embedding_df.columns = top_50_embedding_df.columns
 
+    # Ensure that the concatenation of top_50_embedding_df and top_100k_embedding_df maintains unique elements
     embedding_df = pd.concat([top_100k_embedding_df, top_50_embedding_df])
 
     group1_embeddings, group2_embeddings = embedding_df.loc[group1_stimuli].to_numpy(), embedding_df.loc[
@@ -56,15 +57,10 @@ def process(top_100k_embeddings, top_50_university_embeddings, top_universities,
     # Get group associations of top university words
     joint_vals = []
 
-    print("\n === start === \n")
-
     for word in joint:
-        print(word)
         joint_emb = embedding_df.loc[word].to_numpy()
         es, p = SC_WEAT(joint_emb, group1_embeddings, group2_embeddings, 1000)
         joint_vals.append([es, p])
-
-    print("\n === end === \n")
 
     joint_arr = np.array(joint_vals)
     top_university = pd.DataFrame(joint_arr, index=joint, columns=[f'Effect_Size', 'P_Value'])
@@ -131,8 +127,14 @@ if __name__ == "__main__":
     top_universities = []
     top_university1 = "../results/cohere/top_university/top_university_associations_cohere.csv"
     top_university2 = "../results/BGE/top_university/top_university_associations_BGE.csv"
+    top_university3 = "../results/google/top_university/top_university_associations_google.csv"
+    top_university4 = "../results/microsoft/top_university/top_university_associations_microsoft.csv"
+    top_university5 = "../results/openAI/top_university/top_university_associations_openAI.csv"
     top_universities.append(top_university1)
     top_universities.append(top_university2)
+    top_universities.append(top_university3)
+    top_universities.append(top_university4)
+    top_universities.append(top_university5)
 
     # Get gender stimuli
     female_stimuli = ['female', 'woman', 'girl', 'sister', 'she', 'her', 'hers', 'daughter']
@@ -150,4 +152,25 @@ if __name__ == "__main__":
     output_weats = "../results/cohere/top_university/cohere_gender_top_university_weats.csv"
     output_top_universities = "../results/cohere/top_university/cohere_top_university_words.txt"
     pdf = "../plots/cohere/top_university/cohere_gender_top_university_ratio.pdf"
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities, pdf, female_stimuli, male_stimuli)
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
+    top_50_university_embeddings = "D:/Honour_Thesis_Data/google/google_top_50_universities.csv"
+    output_weats = "../results/google/top_university/google_gender_top_university_weats.csv"
+    output_top_universities = "../results/google/top_university/google_top_university_words.txt"
+    pdf = "../plots/google/top_university/google_gender_top_university_ratio.pdf"
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities, pdf, female_stimuli, male_stimuli)
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt"
+    top_50_university_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_top_50_universities.csv"
+    output_weats = "../results/microsoft/top_university/microsoft_gender_top_university_weats.csv"
+    output_top_universities = "../results/microsoft/top_university/microsoft_top_university_words.txt"
+    pdf = "../plots/microsoft/top_university/microsoft_gender_top_university_ratio.pdf"
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities, pdf, female_stimuli, male_stimuli)
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt"
+    top_50_university_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_top_50_universities.csv"
+    output_weats = "../results/openAI/top_university/openAI_gender_top_university_weats.csv"
+    output_top_universities = "../results/openAI/top_university/openAI_top_university_words.txt"
+    pdf = "../plots/openAI/top_university/openAI_gender_top_university_ratio.pdf"
     process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities, pdf, female_stimuli, male_stimuli)
