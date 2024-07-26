@@ -21,9 +21,9 @@ def readFrom(filename):
     with open(filename, 'r', encoding='utf-8') as file:
         return file.readlines()
 
-def writeTo(filename, response, chunk):
+def writeTo(filename, embeddings, chunk):
     with open(filename, 'w', encoding='utf-8') as file:
-        for word, vectors in zip(chunk, response):
+        for word, vectors in zip(chunk, embeddings):
             file.write(word + " ")
             embedding_str = " ".join(str(vector) for vector in vectors)
             file.write(embedding_str + "\n")

@@ -3,9 +3,13 @@ import pandas as pd
 import csv
 
 def process(top_100k_embeddings, top_50_university_embeddings, result):
-    top_100k_embedding_df = pd.read_csv(top_100k_embeddings, sep=' ', header=None, index_col=0, na_values=None, keep_default_na=False, quoting=csv.QUOTE_NONE)
+    print(top_100k_embeddings)
+
+    # add top university names to the embedding_df for an analysis
+    top_100k_embedding_df = pd.read_csv(top_100k_embeddings, sep=' ', header=None, index_col=0, na_values=None,
+                                        keep_default_na=False, quoting=csv.QUOTE_NONE)
     top_50_embedding_df = pd.read_csv(top_50_university_embeddings, sep=',', header=0, index_col=0)
-    top_50_embedding_df.columns = top_100k_embedding_df.columns
+    top_100k_embedding_df.columns = top_50_embedding_df.columns
 
     embedding_df = pd.concat([top_100k_embedding_df, top_50_embedding_df])
 
@@ -44,3 +48,11 @@ if __name__ == "__main__":
     process("D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt",
             "D:/Honour_Thesis_Data/cohere/cohere_top_50_universities.csv",
             "../results/cohere/top_university/top_university_associations_cohere.csv")
+
+    process("D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt",
+            "D:/Honour_Thesis_Data/google/google_top_50_universities.csv",
+            "../results/google/top_university/top_university_associations_google.csv")
+
+    process("D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt",
+            "D:/Honour_Thesis_Data/microsoft/microsoft_top_50_universities.csv",
+            "../results/microsoft/top_university/top_university_associations_microsoft.csv")

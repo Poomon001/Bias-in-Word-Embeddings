@@ -1,14 +1,10 @@
 import numpy as np
-from numpy.core.defchararray import join
-from numpy.core.shape_base import _block_slicing
 import pandas as pd
-from os import path
 import csv
-from scipy.stats import norm, skew
-from matplotlib import pyplot as plt
-import seaborn as sns
+
 
 def process(top_100k_embeddings, result):
+    print(top_100k_embeddings)
     embedding_df = pd.read_csv(top_100k_embeddings, sep=' ', header=None, index_col=0, na_values=None, keep_default_na=False, quoting=csv.QUOTE_NONE)
 
     # Get mean cosine similarities with Big Tech words
