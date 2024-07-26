@@ -1,12 +1,6 @@
 import numpy as np
-from numpy.core.defchararray import join
-from numpy.core.shape_base import _block_slicing
 import pandas as pd
-from os import path
 import csv
-from scipy.stats import norm, skew
-from matplotlib import pyplot as plt
-import seaborn as sns
 
 def process(top_100k_embeddings, top_50_university_embeddings, result):
     top_100k_embedding_df = pd.read_csv(top_100k_embeddings, sep=' ', header=None, index_col=0, na_values=None, keep_default_na=False, quoting=csv.QUOTE_NONE)
@@ -43,4 +37,10 @@ def process(top_100k_embeddings, top_50_university_embeddings, result):
     largest.to_csv(result)
 
 if __name__ == "__main__":
-    process("D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt", "D:/Honour_Thesis_Data/BGE/BGE_top_50_universities.csv", "../results/BGE/top_university/top_university_associations_BGE.csv")
+    process("D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt",
+            "D:/Honour_Thesis_Data/BGE/BGE_top_50_universities.csv",
+            "../results/BGE/top_university/top_university_associations_BGE.csv")
+
+    process("D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt",
+            "D:/Honour_Thesis_Data/cohere/cohere_top_50_universities.csv",
+            "../results/cohere/top_university/top_university_associations_cohere.csv")

@@ -22,7 +22,6 @@ def writeTo(filename, embeddings):
             embedding_str = " ".join(str(vector) for vector in vectors)
             file.write(embedding_str + "\n")
 
-
 def writeToCSV(filename, embeddings):
     with open(filename, 'w', encoding='utf-8', newline='') as file:
         writer = csv.writer(file, delimiter=',')
@@ -37,27 +36,8 @@ def writeToCSV(filename, embeddings):
             writer.writerow([word] + vector_str)
 
 if __name__ == '__main__':
-    # STEP = 5000
-    # word_list = get_word_list(WORDS_FILE)
-    # all_results = []
-    #
-    # for i in range(0, len(word_list), STEP):
-    #     chunk = word_list[i:i + STEP]
-    #
-    #     embeddings = model.encode(chunk,
-    #                               batch_size=12,
-    #                               max_length=512,
-    #                               )['dense_vecs']
-    #
-    #     all_results.extend(embeddings)
-    #     print(f"completed: ", i)
-    #
-    # writeTo("D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt", all_results)
-
-    print("Finish most_freq")
-
-    STEP = 50
-    word_list = get_word_list(TOP_UNIVERSITIES_FILE)
+    STEP = 5000
+    word_list = get_word_list(WORDS_FILE)
     all_results = []
 
     for i in range(0, len(word_list), STEP):
@@ -69,8 +49,19 @@ if __name__ == '__main__':
                                   )['dense_vecs']
 
         all_results.extend(embeddings)
-        print(f"Completed: {i}")
+        print(f"completed: ", i)
 
-    writeToCSV("D:/Honour_Thesis_Data/BGE/BGE_top_50_universities.csv", all_results)
+    writeTo("D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt", all_results)
+
+    print("Finish most_freq")
+
+    word_list = get_word_list(TOP_UNIVERSITIES_FILE)
+
+    embeddings = model.encode(word_list,
+                              batch_size=12,
+                              max_length=512,
+                              )['dense_vecs']
+
+    writeToCSV("D:/Honour_Thesis_Data/BGE/BGE_top_50_universities.csv", embeddings)
 
     print("Finish top university")
