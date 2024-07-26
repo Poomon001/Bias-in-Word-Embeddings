@@ -163,7 +163,13 @@ If these are male and female stemuli. What should be stimuli for White, Black an
 
 2. Top highest population
 
-## Top University
+## Concepts
+
+### Big Tech
+Pick big tech companies defining by "Mohamed Abdalla and Moustafa Abdalla. 2021. The Grey Hoodie Project: Big
+tobacco, big tech, and the threat on academic integrity." paper
+
+### Top University
 Pick to 50 universities from Times Higher Education
 
 Document: https://www.timeshighereducation.com/world-university-rankings/2024/world-ranking
