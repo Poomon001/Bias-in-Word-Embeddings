@@ -1,29 +1,31 @@
-# Data
+# Bias-in-Word-Embeddings
+
+## Data
 
 Download original data files
 
-## 1. Download GloVe Word Embeddings
+### 1. Download GloVe Word Embeddings
 
 Download the full GloVe word embeddings file (`glove.840B.300d`) from the official GitHub repository.
 
 - **GloVe Repository**: [StanfordNLP GloVe](https://github.com/stanfordnlp/GloVe)
 - **Direct Download Link**: [glove.840B.300d.zip](https://nlp.stanford.edu/data/glove.840B.300d.zip)
 
-## 2. Download FastText Word Embeddings
+### 2. Download FastText Word Embeddings
 
 Download the full FastText word embeddings file (`crawl-300d-2M.vec`) from the official FastText website.
 
 - **FastText Vectors**: [FastText English Vectors](https://fasttext.cc/docs/en/english-vectors.html)
 - **Direct Download Link**: [crawl-300d-2M.vec.zip](https://dl.fbaipublicfiles.com/fasttext/vectors-english/crawl-300d-2M.vec.zip)
 
-## 3. Download NRC-VAD Lexicon
+### 3. Download NRC-VAD Lexicon
 
 Download the full NRC-VAD-Lexicon file (`NRC-VAD-Lexicon.txt`) from the official webpage of Saif Mohammad.
 
 - **NRC-VAD Lexicon**: [NRC-VAD-Lexicon](https://saifmohammad.com/WebPages/nrc-vad.html)
 - **Direct Download Link**: [NRC-VAD-Lexicon.zip](https://saifmohammad.com/WebDocs/Lexicons/NRC-VAD-Lexicon.zip)# Bias-in-Word-Embeddings
 
-## 4. Product ft_100k.csv and glove_100k.txt
+### 4. Product ft_100k.csv and glove_100k.txt
 
 Select the 500k most frequency from glove.840B.300d.txt
 
@@ -31,7 +33,7 @@ Select the 500k most frequency from glove.840B.300d.txt
 head -n 500000 glove.840B.300d.txt > > glove_500k_most_freq.txt
 ```
 
-## 5. Product any _1000*most*_.ext files
+### 5. Product any _1000*most*_.ext files
 
 Example 1 .txt:
 
@@ -46,31 +48,31 @@ Need a header row = 1 + 1000 rows
 head -n 1001 glove_gender_100000_most_frequency.csv > glove_gender_1000_most_frequency.csv
 ```
 
-# Models
+## Models
 
 Testing models
 
-## 1. GloVe
+### 1. GloVe
 
 Document: https://nlp.stanford.edu/data/glove.840B.300d.zip
 
-## 2. FastText
+### 2. FastText
 
 Document: https://dl.fbaipublicfiles.com/fasttext/vectors-english/crawl-300d-2M.vec.zip
 
-## 3. OpenAI
+### 3. OpenAI
 
 Model: text-embedding-3-small
 
 Document: https://platform.openai.com/docs/guides/embeddings
 
-## 4. Cohere
+### 4. Cohere
 
 Model: embed-english-v3.0
 
 Document: https://docs.cohere.com/reference/embed
 
-## 5. Google
+### 5. Google
 
 Model: text-embedding-004
 
@@ -89,24 +91,25 @@ requirement:
    gcloud auth application-default login
    ```
 
-## 6. Microsoft
+### 6. Microsoft
 
 Model: E5-large-v2
 
 Document: https://github.com/microsoft/unilm/tree/master/e5
 Document: https://huggingface.co/intfloat/e5-large-v2
 
-## 7. BGE (Beijing Academy of Artificial Intelligence)
+### 7. BGE (Beijing Academy of Artificial Intelligence)
 
 Model: BAAI/bge-m3-unsupervised
 
 Document: https://huggingface.co/BAAI/bge-m3
 Document: https://huggingface.co/BAAI/bge-m3-unsupervised
 
-#  Cluster Generation
-## 1. clustering prompt: 
-### Generate group_clusters_to_topics.json
+##  Cluster Generation
+### 1. clustering prompt: Generate group_clusters_to_topics.json
+
 Input the cluster of words from group1_over_group2_clusters_11.txt to ChatGPT 4 and Gemini with the following prompt:
+
 ```bash
 Cluster 0: Cache, Cherry, Chill, ...
 Cluster 1: Alice, Amanda, Angela, ...
@@ -143,11 +146,11 @@ Store the result in a JSon for a later use
 }
 ```
 
-# Stimuli Source
-## Gender
+## Stimuli Source
+### Gender
 based off the past research paper
 
-## Race
+### Race
 Selected based on:
 
 1. based off the GPT-4.0 genrator with the prompt
