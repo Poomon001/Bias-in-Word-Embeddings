@@ -14,7 +14,7 @@ def process(top_100k_embeddings, top_50_university_embeddings, result):
     # Ensure that the concatenation of top_50_embedding_df and top_100k_embedding_df maintains unique elements
     embedding_df = pd.concat([top_100k_embedding_df, top_50_embedding_df])
 
-    # Get mean cosine similarities with Big Tech words
+    # Get mean cosine similarities with Top University words
 
     top_university_words = []
 

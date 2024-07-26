@@ -174,3 +174,139 @@ if __name__ == "__main__":
     output_top_universities = "../results/openAI/top_university/openAI_top_university_words.txt"
     pdf = "../plots/openAI/top_university/openAI_gender_top_university_ratio.pdf"
     process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities, pdf, female_stimuli, male_stimuli)
+
+    print("Finish gender class process")
+
+    # race stimuli
+    white_stimuli = ["caucasian", "white", "european", "american", "canadian", "australian", "british", "french",
+                     "german", "italian"]
+    black_stimuli = ["black", "african", "african-american", "haitian", "jamaican", "nigerian", "kenyan", "ethiopian",
+                     "egyptian", "congolese"]
+    asian_stimuli = ["asian", "brown", "chinese", "japanese", "korean", "indian", "filipino", "thai", "indonesian",
+                     "pakistani"]
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt"
+    top_50_university_embeddings = "D:/Honour_Thesis_Data/BGE/BGE_top_50_universities.csv"
+    output_weats = "../results/BGE/top_university/BGE_race_WB_top_university_weats.csv"
+    output_top_universities = "../results/BGE/top_university/BGE_top_university_words.txt"
+    pdf = "../plots/BGE/top_university/BGE_race_WB_top_university_ratio.pdf"
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
+            pdf, white_stimuli, black_stimuli)
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt"
+    top_50_university_embeddings = "D:/Honour_Thesis_Data/cohere/cohere_top_50_universities.csv"
+    output_weats = "../results/cohere/top_university/cohere_race_WB_top_university_weats.csv"
+    output_top_universities = "../results/cohere/top_university/cohere_top_university_words.txt"
+    pdf = "../plots/cohere/top_university/cohere_race_WB_top_university_ratio.pdf"
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
+            pdf, white_stimuli, black_stimuli)
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
+    top_50_university_embeddings = "D:/Honour_Thesis_Data/google/google_top_50_universities.csv"
+    output_weats = "../results/google/top_university/google_race_WB_top_university_weats.csv"
+    output_top_universities = "../results/google/top_university/google_top_university_words.txt"
+    pdf = "../plots/google/top_university/google_race_WB_top_university_ratio.pdf"
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
+            pdf, white_stimuli, black_stimuli)
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt"
+    top_50_university_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_top_50_universities.csv"
+    output_weats = "../results/microsoft/top_university/microsoft_race_WB_top_university_weats.csv"
+    output_top_universities = "../results/microsoft/top_university/microsoft_top_university_words.txt"
+    pdf = "../plots/microsoft/top_university/microsoft_race_WB_top_university_ratio.pdf"
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
+            pdf, white_stimuli, black_stimuli)
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt"
+    top_50_university_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_top_50_universities.csv"
+    output_weats = "../results/openAI/top_university/openAI_race_WB_top_university_weats.csv"
+    output_top_universities = "../results/openAI/top_university/openAI_top_university_words.txt"
+    pdf = "../plots/openAI/top_university/openAI_race_WB_top_university_ratio.pdf"
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
+            pdf, white_stimuli, black_stimuli)
+
+    print("Finish first race class process")
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt"
+    top_50_university_embeddings = "D:/Honour_Thesis_Data/BGE/BGE_top_50_universities.csv"
+    output_weats = "../results/BGE/top_university/BGE_race_WA_top_university_weats.csv"
+    output_top_universities = "../results/BGE/top_university/BGE_top_university_words.txt"
+    pdf = "../plots/BGE/top_university/BGE_race_WA_top_university_ratio.pdf"
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
+            pdf, white_stimuli, asian_stimuli)
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt"
+    top_50_university_embeddings = "D:/Honour_Thesis_Data/cohere/cohere_top_50_universities.csv"
+    output_weats = "../results/cohere/top_university/cohere_race_WA_top_university_weats.csv"
+    output_top_universities = "../results/cohere/top_university/cohere_top_university_words.txt"
+    pdf = "../plots/cohere/top_university/cohere_race_WA_top_university_ratio.pdf"
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
+            pdf, white_stimuli, asian_stimuli)
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
+    top_50_university_embeddings = "D:/Honour_Thesis_Data/google/google_top_50_universities.csv"
+    output_weats = "../results/google/top_university/google_race_WA_top_university_weats.csv"
+    output_top_universities = "../results/google/top_university/google_top_university_words.txt"
+    pdf = "../plots/google/top_university/google_race_WA_top_university_ratio.pdf"
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
+            pdf, white_stimuli, asian_stimuli)
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt"
+    top_50_university_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_top_50_universities.csv"
+    output_weats = "../results/microsoft/top_university/microsoft_race_WA_top_university_weats.csv"
+    output_top_universities = "../results/microsoft/top_university/microsoft_top_university_words.txt"
+    pdf = "../plots/microsoft/top_university/microsoft_race_WA_top_university_ratio.pdf"
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
+            pdf, white_stimuli, asian_stimuli)
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt"
+    top_50_university_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_top_50_universities.csv"
+    output_weats = "../results/openAI/top_university/openAI_race_WA_top_university_weats.csv"
+    output_top_universities = "../results/openAI/top_university/openAI_top_university_words.txt"
+    pdf = "../plots/openAI/top_university/openAI_race_WA_top_university_ratio.pdf"
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
+            pdf, white_stimuli, asian_stimuli)
+
+    print("Finish second race class process")
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt"
+    top_50_university_embeddings = "D:/Honour_Thesis_Data/BGE/BGE_top_50_universities.csv"
+    output_weats = "../results/BGE/top_university/BGE_race_AB_top_university_weats.csv"
+    output_top_universities = "../results/BGE/top_university/BGE_top_university_words.txt"
+    pdf = "../plots/BGE/top_university/BGE_race_AB_top_university_ratio.pdf"
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
+            pdf, asian_stimuli, black_stimuli)
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt"
+    top_50_university_embeddings = "D:/Honour_Thesis_Data/cohere/cohere_top_50_universities.csv"
+    output_weats = "../results/cohere/top_university/cohere_race_AB_top_university_weats.csv"
+    output_top_universities = "../results/cohere/top_university/cohere_top_university_words.txt"
+    pdf = "../plots/cohere/top_university/cohere_race_AB_top_university_ratio.pdf"
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
+            pdf, asian_stimuli, black_stimuli)
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
+    top_50_university_embeddings = "D:/Honour_Thesis_Data/google/google_top_50_universities.csv"
+    output_weats = "../results/google/top_university/google_race_AB_top_university_weats.csv"
+    output_top_universities = "../results/google/top_university/google_top_university_words.txt"
+    pdf = "../plots/google/top_university/google_race_AB_top_university_ratio.pdf"
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
+            pdf, asian_stimuli, black_stimuli)
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt"
+    top_50_university_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_top_50_universities.csv"
+    output_weats = "../results/microsoft/top_university/microsoft_race_AB_top_university_weats.csv"
+    output_top_universities = "../results/microsoft/top_university/microsoft_top_university_words.txt"
+    pdf = "../plots/microsoft/top_university/microsoft_race_AB_top_university_ratio.pdf"
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
+            pdf, asian_stimuli, black_stimuli)
+
+    top_100k_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt"
+    top_50_university_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_top_50_universities.csv"
+    output_weats = "../results/openAI/top_university/openAI_race_AB_top_university_weats.csv"
+    output_top_universities = "../results/openAI/top_university/openAI_top_university_words.txt"
+    pdf = "../plots/openAI/top_university/openAI_race_AB_top_university_ratio.pdf"
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
+            pdf, asian_stimuli, black_stimuli)
+
+    print("Finish third race class process")
