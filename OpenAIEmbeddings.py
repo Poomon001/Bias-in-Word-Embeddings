@@ -53,4 +53,5 @@ if __name__ == '__main__':
             break
 
     # Write all results to a file once all chunks are processed
-    writeTo("D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt", all_results)
+    # writeTo("D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt", all_results)
+    writeTo("D:/Honour_Thesis_Data/openAI/BGE_top_50_universities.txt", all_results)

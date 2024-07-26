@@ -1,0 +1,50 @@
+University of Oxford
+Stanford University
+Massachusetts Institute of Technology
+Harvard University
+University of Cambridge
+Princeton University
+California Institute of Technology
+Imperial College London
+University of California, Berkeley
+Yale University
+ETH Zurich
+Tsinghua University
+The University of Chicago
+Peking University
+Johns Hopkins University
+University of Pennsylvania
+Columbia University
+University of California, Los Angeles
+National University of Singapore
+Cornell University
+University of Toronto
+UCL
+University of Michigan-Ann Arbor
+Carnegie Mellon University
+University of Washington
+Duke University
+New York University
+Northwestern University
+The University of Tokyo
+University of Edinburgh
+Technical University of Munich
+Nanyang Technological University, Singapore
+École Polytechnique Fédérale de Lausanne
+University of California, San Diego
+University of Hong Kong
+Georgia Institute of Technology
+University of Melbourne
+King’s College London
+LMU Munich
+Paris Sciences et Lettres – PSL Research University Paris
+University of British Columbia
+University of Illinois at Urbana-Champaign
+Shanghai Jiao Tong University
+Fudan University
+KU Leuven
+London School of Economics and Political Science
+Universität Heidelberg
+Delft University of Technology
+McGill University
+Karolinska Institute
