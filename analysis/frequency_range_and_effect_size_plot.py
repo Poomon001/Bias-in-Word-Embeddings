@@ -3,28 +3,26 @@ import numpy as np
 
 def plot(input, output, num_columns_list, groups):
     print(f"\n == {input} == \n")
-    data = pd.read_csv(input)
+    data = pd.read_csv(input, na_values=None, keep_default_na=False)
 
     effect_size_floors = [0, .2, .5, .8]
 
     # for 100, 1000, 10000 N-words
     es_list = []
-    for num_columns in num_columns_list:
-        frequency_ceilings = [num_columns]
 
-        for ceiling in frequency_ceilings:
-            n_data = data[:num_columns]
-            ceiling_counts = [ceiling]
+    for ceiling in num_columns_list:
+        head_df = data.head(ceiling)
+        ceiling_counts = [ceiling]
 
-            for es in effect_size_floors:
-                es_df = n_data.loc[n_data[f'{groups[0]}_effect_size'] >= es]
-                es_quantity = len(es_df.index.tolist())
-                ceiling_counts.append(es_quantity)
+        for es in effect_size_floors:
+            es_df = head_df.loc[head_df[f'{groups[0]}_effect_size'] >= es]
+            es_quantity = len(es_df.index.tolist())
+            ceiling_counts.append(es_quantity)
 
-            for es in effect_size_floors:
-                es_df = n_data.loc[n_data[f'{groups[0]}_effect_size'] <= -es]
-                es_quantity = len(es_df.index.tolist())
-                ceiling_counts.append(es_quantity)
+        for es in effect_size_floors:
+            es_df = head_df.loc[head_df[f'{groups[0]}_effect_size'] <= -es]
+            es_quantity = len(es_df.index.tolist())
+            ceiling_counts.append(es_quantity)
 
         es_list.append(ceiling_counts)
 
