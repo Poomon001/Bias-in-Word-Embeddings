@@ -47,22 +47,6 @@ def process(embeddingInoutPath, resultOutputPath, tempDir, filename):
     except Exception as e:
         print("An error occurred while saving the CSV files:", e)
 
-    # Added
-    # NRC-VAD Dataframe
-    vad_df = pd.read_table(f'D:/Honour_Thesis_Data/raw/NRC-VAD-Lexicon.txt', sep='\t', index_col=0, na_values=None,
-                           keep_default_na=False)
-    vad_words = vad_df.index.tolist()
-    vad_words = [word for word in vad_words if word in embedding_df.index]
-
-    # VAD WEATs - GloVe embedding
-    bias_array = np.array(
-        [SC_WEAT(embedding_df.loc[word].to_numpy(), female_embeddings, male_embeddings, PERMUTATIONS) for word in
-         [str(i) for i in vad_words]])
-    bias_df = pd.DataFrame(bias_array, index=vad_words, columns=['female_effect_size', 'female_p_value'])
-    bias_df.to_csv("../results/glove/most_frequency_words/test_VAD_glove_gender_100000_most_frequency.csv")
-    print('GloVe VAD')
-    # Added
-
     # Non VAD WEAT
     # 10k WEATS at a time - 100k most frequent words - GloVe embedding
     for i in range(10):
@@ -90,43 +74,43 @@ def process(embeddingInoutPath, resultOutputPath, tempDir, filename):
 if __name__ == "__main__":
     tempDir = "../temp/glove"
     raw = "D:/Honour_Thesis_Data/raw/glove_100000_most_freq_skip.txt"
-    result = "../results/glove/most_frequency_words/test_glove_gender_100000_most_frequency.csv"
+    result = "../results/glove/most_frequency_words/glove_gender_100000_most_frequency.csv"
     filename = "glove"
     bias_glove_100000 = process(raw, result, tempDir, filename)
 
-    # tempDir = "../temp/fasttext"
-    # raw = "D:/Honour_Thesis_Data/raw/ft_100000_most_freq_skip.csv"
-    # result = "../results/fasttext/most_frequency_words/ft_gender_100000_most_frequency.csv"
-    # tempDir = "../temp/fasttext"
-    # filename = "ft"
-    # bias_ft_100000 = process(raw, result, tempDir, filename)
-    #
-    # tempDir = "../temp/openai"
-    # raw = "D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt"
-    # result = "../results/openAI/most_frequency_words/openAI_gender_100000_most_frequency.csv"
-    # filename = "openai"
-    # bias_openAI_100000 = process(raw, result, tempDir, filename)
-    #
-    # tempDir = "../temp/cohere"
-    # raw = "D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt"
-    # result = "../results/cohere/most_frequency_words/cohere_gender_100000_most_frequency.csv"
-    # filename = "cohere"
-    # bias_cohere_100000 = process(raw, result, tempDir, filename)
-    #
-    # tempDir = "../temp/google"
-    # raw = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
-    # result = "../results/google/most_frequency_words/google_gender_100000_most_frequency.csv"
-    # filename = "google"
-    # bias_google_100000 = process(raw, result, tempDir, filename)
-    #
-    # tempDir = "../temp/microsoft"
-    # raw = "D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt"
-    # result = "../results/microsoft/most_frequency_words/microsoft_gender_100000_most_frequency.csv"
-    # filename = "microsoft"
-    # bias_microsoft_100000 = process(raw, result, tempDir, filename)
-    #
-    # tempDir = "../temp/BGE"
-    # raw = "D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt"
-    # result = "../results/BGE/most_frequency_words/BGE_gender_100000_most_frequency.csv"
-    # filename = "BGE"
-    # bias_BGE_100000 = process(raw, result, tempDir, filename)
+    tempDir = "../temp/fasttext"
+    raw = "D:/Honour_Thesis_Data/raw/ft_100000_most_freq_skip.csv"
+    result = "../results/fasttext/most_frequency_words/ft_gender_100000_most_frequency.csv"
+    tempDir = "../temp/fasttext"
+    filename = "ft"
+    bias_ft_100000 = process(raw, result, tempDir, filename)
+
+    tempDir = "../temp/openai"
+    raw = "D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt"
+    result = "../results/openAI/most_frequency_words/openAI_gender_100000_most_frequency.csv"
+    filename = "openai"
+    bias_openAI_100000 = process(raw, result, tempDir, filename)
+
+    tempDir = "../temp/cohere"
+    raw = "D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt"
+    result = "../results/cohere/most_frequency_words/cohere_gender_100000_most_frequency.csv"
+    filename = "cohere"
+    bias_cohere_100000 = process(raw, result, tempDir, filename)
+
+    tempDir = "../temp/google"
+    raw = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
+    result = "../results/google/most_frequency_words/google_gender_100000_most_frequency.csv"
+    filename = "google"
+    bias_google_100000 = process(raw, result, tempDir, filename)
+
+    tempDir = "../temp/microsoft"
+    raw = "D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt"
+    result = "../results/microsoft/most_frequency_words/microsoft_gender_100000_most_frequency.csv"
+    filename = "microsoft"
+    bias_microsoft_100000 = process(raw, result, tempDir, filename)
+
+    tempDir = "../temp/BGE"
+    raw = "D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt"
+    result = "../results/BGE/most_frequency_words/BGE_gender_100000_most_frequency.csv"
+    filename = "BGE"
+    bias_BGE_100000 = process(raw, result, tempDir, filename)
