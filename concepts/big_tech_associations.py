@@ -29,8 +29,6 @@ def process(top_100k_embeddings, result):
     largest.to_csv(result)
 
 if __name__ == "__main__":
-    process("D:/Honour_Thesis_Data/raw/glove_100000_most_freq_skip.txt", "../results/glove/big_tech/big_tech_associations_glove.csv")
-    process("D:/Honour_Thesis_Data/raw/ft_100000_most_freq_skip.csv", "../results/fasttext/big_tech/big_tech_associations_ft.csv")
     process("D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt", "../results/openAI/big_tech/big_tech_associations_openAI.csv")
     process("D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt", "../results/cohere/big_tech/big_tech_associations_cohere.csv")
     process("D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt", "../results/google/big_tech/big_tech_associations_google.csv")

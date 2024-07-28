@@ -118,36 +118,20 @@ def process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs,
 
 if __name__ == "__main__":
     largestBigTechs = []
-    bigtech1 = "../results/glove/big_tech/big_tech_associations_glove.csv"
-    bigtech2 = "../results/fasttext/big_tech/big_tech_associations_ft.csv"
-    bigtech3 = "../results/openAI/big_tech/big_tech_associations_openAI.csv"
-    bigtech4 = "../results/cohere/big_tech/big_tech_associations_cohere.csv"
-    bigtech5 = "../results/google/big_tech/big_tech_associations_google.csv"
-    bigtech6 = "../results/microsoft/big_tech/big_tech_associations_microsoft.csv"
-    bigtech7 = "../results/BGE/big_tech/big_tech_associations_BGE.csv"
+    bigtech1 = "../results/openAI/big_tech/big_tech_associations_openAI.csv"
+    bigtech2 = "../results/cohere/big_tech/big_tech_associations_cohere.csv"
+    bigtech3 = "../results/google/big_tech/big_tech_associations_google.csv"
+    bigtech4 = "../results/microsoft/big_tech/big_tech_associations_microsoft.csv"
+    bigtech5 = "../results/BGE/big_tech/big_tech_associations_BGE.csv"
     largestBigTechs.append(bigtech1)
     largestBigTechs.append(bigtech2)
     largestBigTechs.append(bigtech3)
     largestBigTechs.append(bigtech4)
     largestBigTechs.append(bigtech5)
-    largestBigTechs.append(bigtech6)
-    largestBigTechs.append(bigtech7)
 
     # Get gender stimuli
     female_stimuli = ['female', 'woman', 'girl', 'sister', 'she', 'her', 'hers', 'daughter']
     male_stimuli = ['male', 'man', 'boy', 'brother', 'he', 'him', 'his', 'son']
-
-    top_100k_embeddings = "D:/Honour_Thesis_Data/raw/glove_100000_most_freq_skip.txt"
-    output_weats = "../results/glove/big_tech/test_glove_gender_big_tech_weats.csv"
-    output_bigtechs = "../results/glove/big_tech/test_glove_big_tech_words.txt"
-    pdf = "../plots/glove/bigtech/test_glove_gender_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf,female_stimuli, male_stimuli)
-
-    top_100k_embeddings = "D:/Honour_Thesis_Data/raw/ft_100000_most_freq_skip.csv"
-    output_weats = "../results/fasttext/big_tech/ft_gender_big_tech_weats.csv"
-    output_bigtechs = "../results/fasttext/big_tech/ft_big_tech_words.txt"
-    pdf = "../plots/fasttext/bigtech/ft_gender_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf,female_stimuli, male_stimuli)
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt"
     output_weats = "../results/openAI/big_tech/openai_gender_big_tech_weats.csv"
@@ -189,18 +173,6 @@ if __name__ == "__main__":
     asian_stimuli = ["asian", "brown", "chinese", "japanese", "korean", "indian", "filipino", "thai", "indonesian",
                      "pakistani"]
 
-    top_100k_embeddings = "D:/Honour_Thesis_Data/raw/glove_100000_most_freq_skip.txt"
-    output_weats = "../results/glove/big_tech/glove_race_WB_big_tech_weats.csv"
-    output_bigtechs = "../results/glove/big_tech/glove_big_tech_words.txt"
-    pdf = "../plots/glove/bigtech/glove_race_WB_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, black_stimuli)
-
-    top_100k_embeddings = "D:/Honour_Thesis_Data/raw/ft_100000_most_freq_skip.csv"
-    output_weats = "../results/fasttext/big_tech/ft_race_WB_big_tech_weats.csv"
-    output_bigtechs = "../results/fasttext/big_tech/ft_big_tech_words.txt"
-    pdf = "../plots/fasttext/bigtech/ft_race_WB_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, black_stimuli)
-
     top_100k_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt"
     output_weats = "../results/openAI/big_tech/openai_race_WB_big_tech_weats.csv"
     output_bigtechs = "../results/openAI/big_tech/openai_big_tech_words.txt"
@@ -233,18 +205,6 @@ if __name__ == "__main__":
 
     print("Finish first race class process")
 
-    top_100k_embeddings = "D:/Honour_Thesis_Data/raw/glove_100000_most_freq_skip.txt"
-    output_weats = "../results/glove/big_tech/glove_race_WA_big_tech_weats.csv"
-    output_bigtechs = "../results/glove/big_tech/glove_big_tech_words.txt"
-    pdf = "../plots/glove/bigtech/glove_race_WA_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, asian_stimuli)
-
-    top_100k_embeddings = "D:/Honour_Thesis_Data/raw/ft_100000_most_freq_skip.csv"
-    output_weats = "../results/fasttext/big_tech/ft_race_WA_big_tech_weats.csv"
-    output_bigtechs = "../results/fasttext/big_tech/ft_big_tech_words.txt"
-    pdf = "../plots/fasttext/bigtech/ft_race_WA_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, asian_stimuli)
-
     top_100k_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt"
     output_weats = "../results/openAI/big_tech/openai_race_WA_big_tech_weats.csv"
     output_bigtechs = "../results/openAI/big_tech/openai_big_tech_words.txt"
@@ -276,18 +236,6 @@ if __name__ == "__main__":
     process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, asian_stimuli)
 
     print("Finish second race class process")
-
-    top_100k_embeddings = "D:/Honour_Thesis_Data/raw/glove_100000_most_freq_skip.txt"
-    output_weats = "../results/glove/big_tech/glove_race_AB_big_tech_weats.csv"
-    output_bigtechs = "../results/glove/big_tech/glove_big_tech_words.txt"
-    pdf = "../plots/glove/bigtech/glove_race_AB_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, asian_stimuli, black_stimuli)
-
-    top_100k_embeddings = "D:/Honour_Thesis_Data/raw/ft_100000_most_freq_skip.csv"
-    output_weats = "../results/fasttext/big_tech/ft_race_AB_big_tech_weats.csv"
-    output_bigtechs = "../results/fasttext/big_tech/ft_big_tech_words.txt"
-    pdf = "../plots/fasttext/bigtech/ft_race_AB_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, asian_stimuli, black_stimuli)
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt"
     output_weats = "../results/openAI/big_tech/openai_race_AB_big_tech_weats.csv"

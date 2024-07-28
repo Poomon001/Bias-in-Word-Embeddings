@@ -33,21 +33,6 @@ Select the 500k most frequency from glove.840B.300d.txt
 head -n 500000 glove.840B.300d.txt > > glove_500k_most_freq.txt
 ```
 
-### 5. Product any _1000*most*_.ext files
-
-Example 1 .txt:
-
-```bash
-head -n 1000 glove_100000_most_freq_skip.txt > glove_1000_most_freq.txt
-```
-
-Example 2 .csv:
-Need a header row = 1 + 1000 rows
-
-```bash
-head -n 1001 glove_gender_100000_most_frequency.csv > glove_gender_1000_most_frequency.csv
-```
-
 ## Models
 
 Testing models
