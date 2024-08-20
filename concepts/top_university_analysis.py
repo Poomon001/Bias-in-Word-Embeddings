@@ -23,7 +23,7 @@ def SC_WEAT(w, A, B, permutations):
 
     return effect_size, p_value
 
-def process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities, pdf, group1_stimuli, group2_stimuli):
+def process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities, pdf, group1_stimuli, group2_stimuli, titleModel):
     print(top_100k_embeddings)
 
     # add top university names to the embedding_df for an analysis
@@ -101,7 +101,7 @@ def process(top_100k_embeddings, top_50_university_embeddings, top_universities,
 
     plt.xlabel('Effect Size')
     plt.ylabel('Percentage')
-    plt.title(f'Percentage of {group2_stimuli[0].title()} and {group1_stimuli[0].title()} for Different Effect Sizes')
+    plt.title(f'Percentage of {group2_stimuli[0].title()} and {group1_stimuli[0].title()} for Different Effect Sizes - {titleModel}')
     plt.xticks([i + bar_width / 2 for i in index], es_list)
     plt.legend()
 
@@ -145,35 +145,35 @@ if __name__ == "__main__":
     output_weats = "../results/BGE/top_university/BGE_gender_top_university_weats.csv"
     output_top_universities = "../results/BGE/top_university/BGE_top_university_words.txt"
     pdf = "../plots/BGE/top_university/BGE_gender_top_university_ratio.pdf"
-    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities, pdf, female_stimuli, male_stimuli)
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities, pdf, female_stimuli, male_stimuli, "BGE")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt"
     top_50_university_embeddings = "D:/Honour_Thesis_Data/cohere/cohere_top_50_universities.csv"
     output_weats = "../results/cohere/top_university/cohere_gender_top_university_weats.csv"
     output_top_universities = "../results/cohere/top_university/cohere_top_university_words.txt"
     pdf = "../plots/cohere/top_university/cohere_gender_top_university_ratio.pdf"
-    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities, pdf, female_stimuli, male_stimuli)
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities, pdf, female_stimuli, male_stimuli, "Cohere")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
     top_50_university_embeddings = "D:/Honour_Thesis_Data/google/google_top_50_universities.csv"
     output_weats = "../results/google/top_university/google_gender_top_university_weats.csv"
     output_top_universities = "../results/google/top_university/google_top_university_words.txt"
     pdf = "../plots/google/top_university/google_gender_top_university_ratio.pdf"
-    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities, pdf, female_stimuli, male_stimuli)
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities, pdf, female_stimuli, male_stimuli, "Google")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt"
     top_50_university_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_top_50_universities.csv"
     output_weats = "../results/microsoft/top_university/microsoft_gender_top_university_weats.csv"
     output_top_universities = "../results/microsoft/top_university/microsoft_top_university_words.txt"
     pdf = "../plots/microsoft/top_university/microsoft_gender_top_university_ratio.pdf"
-    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities, pdf, female_stimuli, male_stimuli)
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities, pdf, female_stimuli, male_stimuli, "Microsoft")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt"
     top_50_university_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_top_50_universities.csv"
     output_weats = "../results/openAI/top_university/openAI_gender_top_university_weats.csv"
     output_top_universities = "../results/openAI/top_university/openAI_top_university_words.txt"
     pdf = "../plots/openAI/top_university/openAI_gender_top_university_ratio.pdf"
-    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities, pdf, female_stimuli, male_stimuli)
+    process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities, pdf, female_stimuli, male_stimuli, "OpenAI")
 
     print("Finish gender class process")
 
@@ -191,7 +191,7 @@ if __name__ == "__main__":
     output_top_universities = "../results/BGE/top_university/BGE_top_university_words.txt"
     pdf = "../plots/BGE/top_university/BGE_race_WB_top_university_ratio.pdf"
     process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
-            pdf, white_stimuli, black_stimuli)
+            pdf, white_stimuli, black_stimuli, "BGE")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt"
     top_50_university_embeddings = "D:/Honour_Thesis_Data/cohere/cohere_top_50_universities.csv"
@@ -199,7 +199,7 @@ if __name__ == "__main__":
     output_top_universities = "../results/cohere/top_university/cohere_top_university_words.txt"
     pdf = "../plots/cohere/top_university/cohere_race_WB_top_university_ratio.pdf"
     process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
-            pdf, white_stimuli, black_stimuli)
+            pdf, white_stimuli, black_stimuli, "Cohere")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
     top_50_university_embeddings = "D:/Honour_Thesis_Data/google/google_top_50_universities.csv"
@@ -207,7 +207,7 @@ if __name__ == "__main__":
     output_top_universities = "../results/google/top_university/google_top_university_words.txt"
     pdf = "../plots/google/top_university/google_race_WB_top_university_ratio.pdf"
     process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
-            pdf, white_stimuli, black_stimuli)
+            pdf, white_stimuli, black_stimuli, "Google")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt"
     top_50_university_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_top_50_universities.csv"
@@ -215,7 +215,7 @@ if __name__ == "__main__":
     output_top_universities = "../results/microsoft/top_university/microsoft_top_university_words.txt"
     pdf = "../plots/microsoft/top_university/microsoft_race_WB_top_university_ratio.pdf"
     process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
-            pdf, white_stimuli, black_stimuli)
+            pdf, white_stimuli, black_stimuli, "Microsoft")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt"
     top_50_university_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_top_50_universities.csv"
@@ -223,7 +223,7 @@ if __name__ == "__main__":
     output_top_universities = "../results/openAI/top_university/openAI_top_university_words.txt"
     pdf = "../plots/openAI/top_university/openAI_race_WB_top_university_ratio.pdf"
     process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
-            pdf, white_stimuli, black_stimuli)
+            pdf, white_stimuli, black_stimuli, "OpenAI")
 
     print("Finish first race class process")
 
@@ -233,7 +233,7 @@ if __name__ == "__main__":
     output_top_universities = "../results/BGE/top_university/BGE_top_university_words.txt"
     pdf = "../plots/BGE/top_university/BGE_race_WA_top_university_ratio.pdf"
     process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
-            pdf, white_stimuli, asian_stimuli)
+            pdf, white_stimuli, asian_stimuli, "BGE")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt"
     top_50_university_embeddings = "D:/Honour_Thesis_Data/cohere/cohere_top_50_universities.csv"
@@ -241,7 +241,7 @@ if __name__ == "__main__":
     output_top_universities = "../results/cohere/top_university/cohere_top_university_words.txt"
     pdf = "../plots/cohere/top_university/cohere_race_WA_top_university_ratio.pdf"
     process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
-            pdf, white_stimuli, asian_stimuli)
+            pdf, white_stimuli, asian_stimuli, "Cohere")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
     top_50_university_embeddings = "D:/Honour_Thesis_Data/google/google_top_50_universities.csv"
@@ -249,7 +249,7 @@ if __name__ == "__main__":
     output_top_universities = "../results/google/top_university/google_top_university_words.txt"
     pdf = "../plots/google/top_university/google_race_WA_top_university_ratio.pdf"
     process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
-            pdf, white_stimuli, asian_stimuli)
+            pdf, white_stimuli, asian_stimuli, "Google")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt"
     top_50_university_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_top_50_universities.csv"
@@ -257,7 +257,7 @@ if __name__ == "__main__":
     output_top_universities = "../results/microsoft/top_university/microsoft_top_university_words.txt"
     pdf = "../plots/microsoft/top_university/microsoft_race_WA_top_university_ratio.pdf"
     process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
-            pdf, white_stimuli, asian_stimuli)
+            pdf, white_stimuli, asian_stimuli, "Microsoft")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt"
     top_50_university_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_top_50_universities.csv"
@@ -265,7 +265,7 @@ if __name__ == "__main__":
     output_top_universities = "../results/openAI/top_university/openAI_top_university_words.txt"
     pdf = "../plots/openAI/top_university/openAI_race_WA_top_university_ratio.pdf"
     process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
-            pdf, white_stimuli, asian_stimuli)
+            pdf, white_stimuli, asian_stimuli, "OpenAI")
 
     print("Finish second race class process")
 
@@ -275,7 +275,7 @@ if __name__ == "__main__":
     output_top_universities = "../results/BGE/top_university/BGE_top_university_words.txt"
     pdf = "../plots/BGE/top_university/BGE_race_AB_top_university_ratio.pdf"
     process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
-            pdf, asian_stimuli, black_stimuli)
+            pdf, asian_stimuli, black_stimuli, "BGE")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt"
     top_50_university_embeddings = "D:/Honour_Thesis_Data/cohere/cohere_top_50_universities.csv"
@@ -283,7 +283,7 @@ if __name__ == "__main__":
     output_top_universities = "../results/cohere/top_university/cohere_top_university_words.txt"
     pdf = "../plots/cohere/top_university/cohere_race_AB_top_university_ratio.pdf"
     process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
-            pdf, asian_stimuli, black_stimuli)
+            pdf, asian_stimuli, black_stimuli, "Cohere")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
     top_50_university_embeddings = "D:/Honour_Thesis_Data/google/google_top_50_universities.csv"
@@ -291,7 +291,7 @@ if __name__ == "__main__":
     output_top_universities = "../results/google/top_university/google_top_university_words.txt"
     pdf = "../plots/google/top_university/google_race_AB_top_university_ratio.pdf"
     process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
-            pdf, asian_stimuli, black_stimuli)
+            pdf, asian_stimuli, black_stimuli, "Google")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt"
     top_50_university_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_top_50_universities.csv"
@@ -299,7 +299,7 @@ if __name__ == "__main__":
     output_top_universities = "../results/microsoft/top_university/microsoft_top_university_words.txt"
     pdf = "../plots/microsoft/top_university/microsoft_race_AB_top_university_ratio.pdf"
     process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
-            pdf, asian_stimuli, black_stimuli)
+            pdf, asian_stimuli, black_stimuli, "Microsoft")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_100000_most_freq_skip.txt"
     top_50_university_embeddings = "D:/Honour_Thesis_Data/openAI/openAI_top_50_universities.csv"
@@ -307,6 +307,6 @@ if __name__ == "__main__":
     output_top_universities = "../results/openAI/top_university/openAI_top_university_words.txt"
     pdf = "../plots/openAI/top_university/openAI_race_AB_top_university_ratio.pdf"
     process(top_100k_embeddings, top_50_university_embeddings, top_universities, output_weats, output_top_universities,
-            pdf, asian_stimuli, black_stimuli)
+            pdf, asian_stimuli, black_stimuli, "OpenAI")
 
     print("Finish third race class process")

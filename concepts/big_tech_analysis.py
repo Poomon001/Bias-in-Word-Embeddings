@@ -23,7 +23,7 @@ def SC_WEAT(w, A, B, permutations):
 
     return effect_size, p_value
 
-def process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, group1_stimuli, group2_stimuli):
+def process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, group1_stimuli, group2_stimuli, titleModel):
     print(top_100k_embeddings)
     embedding_df = pd.read_csv(top_100k_embeddings, sep=' ', header=None, index_col=0, na_values=None, keep_default_na=False, quoting=csv.QUOTE_NONE)
 
@@ -93,7 +93,7 @@ def process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs,
 
     plt.xlabel('Effect Size')
     plt.ylabel('Percentage')
-    plt.title(f'Percentage of {group2_stimuli[0].title()} and {group1_stimuli[0].title()} for Different Effect Sizes')
+    plt.title(f'Percentage of {group2_stimuli[0].title()} and {group1_stimuli[0].title()} for Different Effect Sizes - {titleModel}')
     plt.xticks([i + bar_width / 2 for i in index], es_list)
     plt.legend()
 
@@ -137,31 +137,31 @@ if __name__ == "__main__":
     output_weats = "../results/openAI/big_tech/openai_gender_big_tech_weats.csv"
     output_bigtechs = "../results/openAI/big_tech/openai_big_tech_words.txt"
     pdf = "../plots/openAI/bigtech/openai_gender_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf,female_stimuli, male_stimuli)
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, female_stimuli, male_stimuli, "OpenAI")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt"
     output_weats = "../results/cohere/big_tech/cohere_gender_big_tech_weats.csv"
     output_bigtechs = "../results/cohere/big_tech/cohere_big_tech_words.txt"
     pdf = "../plots/cohere/bigtech/cohere_gender_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, female_stimuli, male_stimuli)
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, female_stimuli, male_stimuli, "Cohere")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
     output_weats = "../results/google/big_tech/google_gender_big_tech_weats.csv"
     output_bigtechs = "../results/google/big_tech/google_big_tech_words.txt"
     pdf = "../plots/google/bigtech/google_gender_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf,female_stimuli, male_stimuli)
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf,female_stimuli, male_stimuli, "Google")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt"
     output_weats = "../results/microsoft/big_tech/microsoft_gender_big_tech_weats.csv"
     output_bigtechs = "../results/microsoft/big_tech/microsoft_big_tech_words.txt"
     pdf = "../plots/microsoft/bigtech/microsoft_gender_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf,female_stimuli, male_stimuli)
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf,female_stimuli, male_stimuli, "Microsoft")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt"
     output_weats = "../results/BGE/big_tech/BGE_gender_big_tech_weats.csv"
     output_bigtechs = "../results/BGE/big_tech/BGE_big_tech_words.txt"
     pdf = "../plots/BGE/bigtech/BGE_gender_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf,female_stimuli, male_stimuli)
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf,female_stimuli, male_stimuli, "BGE")
 
     print("Finish gender class process")
 
@@ -177,31 +177,31 @@ if __name__ == "__main__":
     output_weats = "../results/openAI/big_tech/openai_race_WB_big_tech_weats.csv"
     output_bigtechs = "../results/openAI/big_tech/openai_big_tech_words.txt"
     pdf = "../plots/openAI/bigtech/openai_race_WB_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, black_stimuli)
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, black_stimuli, "OpenAI")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt"
     output_weats = "../results/cohere/big_tech/cohere_race_WB_big_tech_weats.csv"
     output_bigtechs = "../results/cohere/big_tech/cohere_big_tech_words.txt"
     pdf = "../plots/cohere/bigtech/cohere_race_WB_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, black_stimuli)
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, black_stimuli, "Cohere")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
     output_weats = "../results/google/big_tech/google_race_WB_big_tech_weats.csv"
     output_bigtechs = "../results/google/big_tech/google_big_tech_words.txt"
     pdf = "../plots/google/bigtech/google_race_WB_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, black_stimuli)
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, black_stimuli, "Google")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt"
     output_weats = "../results/microsoft/big_tech/microsoft_race_WB_big_tech_weats.csv"
     output_bigtechs = "../results/microsoft/big_tech/microsoft_big_tech_words.txt"
     pdf = "../plots/microsoft/bigtech/microsoft_race_WB_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, black_stimuli)
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, black_stimuli, "Microsoft")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt"
     output_weats = "../results/BGE/big_tech/BGE_race_WB_big_tech_weats.csv"
     output_bigtechs = "../results/BGE/big_tech/BGE_big_tech_words.txt"
     pdf = "../plots/BGE/bigtech/BGE_race_WB_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, black_stimuli)
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, black_stimuli, "BGE")
 
     print("Finish first race class process")
 
@@ -209,31 +209,31 @@ if __name__ == "__main__":
     output_weats = "../results/openAI/big_tech/openai_race_WA_big_tech_weats.csv"
     output_bigtechs = "../results/openAI/big_tech/openai_big_tech_words.txt"
     pdf = "../plots/openAI/bigtech/openai_race_WA_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, asian_stimuli)
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, asian_stimuli, "OpenAI")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt"
     output_weats = "../results/cohere/big_tech/cohere_race_WA_big_tech_weats.csv"
     output_bigtechs = "../results/cohere/big_tech/cohere_big_tech_words.txt"
     pdf = "../plots/cohere/bigtech/cohere_race_WA_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, asian_stimuli)
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, asian_stimuli, "Cohere")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
     output_weats = "../results/google/big_tech/google_race_WA_big_tech_weats.csv"
     output_bigtechs = "../results/google/big_tech/google_big_tech_words.txt"
     pdf = "../plots/google/bigtech/google_race_WA_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, asian_stimuli)
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, asian_stimuli, "Google")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt"
     output_weats = "../results/microsoft/big_tech/microsoft_race_WA_big_tech_weats.csv"
     output_bigtechs = "../results/microsoft/big_tech/microsoft_big_tech_words.txt"
     pdf = "../plots/microsoft/bigtech/microsoft_race_WA_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, asian_stimuli)
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, asian_stimuli, "Microsoft")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt"
     output_weats = "../results/BGE/big_tech/BGE_race_WA_big_tech_weats.csv"
     output_bigtechs = "../results/BGE/big_tech/BGE_big_tech_words.txt"
     pdf = "../plots/BGE/bigtech/BGE_race_WA_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, asian_stimuli)
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, white_stimuli, asian_stimuli, "BGE")
 
     print("Finish second race class process")
 
@@ -241,30 +241,30 @@ if __name__ == "__main__":
     output_weats = "../results/openAI/big_tech/openai_race_AB_big_tech_weats.csv"
     output_bigtechs = "../results/openAI/big_tech/openai_big_tech_words.txt"
     pdf = "../plots/openAI/bigtech/openai_race_AB_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, asian_stimuli, black_stimuli)
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, asian_stimuli, black_stimuli, "OpenAI")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/cohere/cohere_100000_most_freq_skip.txt"
     output_weats = "../results/cohere/big_tech/cohere_race_AB_big_tech_weats.csv"
     output_bigtechs = "../results/cohere/big_tech/cohere_big_tech_words.txt"
     pdf = "../plots/cohere/bigtech/cohere_race_AB_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, asian_stimuli, black_stimuli)
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, asian_stimuli, black_stimuli, "Cohere")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/google/google_100000_most_freq_skip.txt"
     output_weats = "../results/google/big_tech/google_race_AB_big_tech_weats.csv"
     output_bigtechs = "../results/google/big_tech/google_big_tech_words.txt"
     pdf = "../plots/google/bigtech/google_race_AB_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, asian_stimuli, black_stimuli)
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, asian_stimuli, black_stimuli, "Google")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/microsoft/microsoft_100000_most_freq_skip.txt"
     output_weats = "../results/microsoft/big_tech/microsoft_race_AB_big_tech_weats.csv"
     output_bigtechs = "../results/microsoft/big_tech/microsoft_big_tech_words.txt"
     pdf = "../plots/microsoft/bigtech/microsoft_race_AB_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, asian_stimuli, black_stimuli)
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, asian_stimuli, black_stimuli, "Microsoft")
 
     top_100k_embeddings = "D:/Honour_Thesis_Data/BGE/BGE_100000_most_freq_skip.txt"
     output_weats = "../results/BGE/big_tech/BGE_race_AB_big_tech_weats.csv"
     output_bigtechs = "../results/BGE/big_tech/BGE_big_tech_words.txt"
     pdf = "../plots/BGE/bigtech/BGE_race_AB_bigtech_ratio.pdf"
-    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, asian_stimuli, black_stimuli)
+    process(top_100k_embeddings, largestBigTechs, output_weats, output_bigtechs, pdf, asian_stimuli, black_stimuli, "BGE")
 
     print("Finish third race class process")

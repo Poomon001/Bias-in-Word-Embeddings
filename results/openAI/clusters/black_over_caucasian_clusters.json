@@ -1,12 +1,13 @@
 {
-  "0": "Locations & Cities",
-  "1": "People (Negative)",
+  "0": "Geographical Locations",
+  "1": "Political Leaders & Movements",
   "2": "Music & Entertainment",
-  "3": "Race & Ethnicity",
-  "4": "Social Issues",
+  "3": "Ethnic & Cultural Groups",
+  "4": "Negative Events & Conditions",
   "5": "Countries & Regions",
-  "6": "Animals & Nature",
-  "7": "Religion",
-  "8": "Pop Culture",
-  "9": "Society & Politics"
+  "6": "Natural Disasters & Diseases",
+  "7": "Biblical & Religious Figures",
+  "8": "Names & Miscellaneous Objects",
+  "9": "Challenges & Controversies",
+  "10": "Animals & Nature"
 }
