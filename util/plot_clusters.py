@@ -7,45 +7,50 @@ Visualize word clusters derived from word embeddings. The word embeddings are re
 import pandas as pd
 import matplotlib.pyplot as plt
 import json
+from matplotlib.colors import ListedColormap
+
 
 def plot(dat, pdf, clusterToTopic, title):
     with open(clusterToTopic, 'r') as json_file:
         cluster_data = json.load(json_file)
-
     data = pd.read_csv(dat, delim_whitespace=True)
-    print(data.head())
 
-    # Extract the data for plotting
     x = data['x']
     y = data['y']
-    clusters = data['cluster']
 
-    # Create a scatter plot
-    plt.figure(figsize=(10, 8))
+    # Define colors
+    colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b',
+              '#e377c2', '#7f7f7f', '#bcbd22', '#17becf', '#FFD700']
+    colors = colors[:len(cluster_data)]
 
-    # Scatter plot with different colors for different clusters
-    scatter = plt.scatter(x, y, c=clusters, cmap='tab10', label=clusters)
+    # Create plot
+    fig, ax = plt.subplots(figsize=(12, 8))
+    scatter = plt.scatter(x, y, c=data['cluster'], cmap=ListedColormap(colors))
 
-    # Define the number-to-text mapping
-    number_to_text = {int(key): value for key, value in cluster_data.items()}
+    # Create legend
+    color_patches = [plt.Rectangle((0, 0), 1, 1, fc=color) for color in colors]
+    legend_labels = list(cluster_data.values())
 
-    # Add a color bar
-    cbar = plt.colorbar(scatter, label='Cluster')
-    cbar.set_ticks(range(len(number_to_text)))
-    cbar.set_ticklabels([number_to_text[i] for i in range(len(number_to_text))])
+    # Place legend
+    ax.legend(color_patches, legend_labels,
+              loc='center left',
+              bbox_to_anchor=(1.05, 0.5),
+              title="Clusters",
+              title_fontsize=12,
+              fontsize=10,
+              handleheight=2.0,
+              labelspacing=1.0)
 
-    # Add titles and labels
-    plt.title(title)
-    plt.xlabel('X')
-    plt.ylabel('Y')
-
+    # Adjust layout
     plt.tight_layout()
 
-    plt.plot()
+    # Add titles and labels
+    ax.set_title(title)
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
 
-    # Save the plot as a PDF
-    plt.savefig(pdf, format='pdf')
-
+    # Save and show plot
+    plt.savefig(pdf, format='pdf', bbox_inches='tight', pad_inches=0.2)
     plt.show()
 
 if __name__ == "__main__":
