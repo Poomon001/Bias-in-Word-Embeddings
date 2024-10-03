@@ -19,9 +19,13 @@ def plot(dat, pdf, clusterToTopic, title):
     y = data['y']
 
     # Define colors
-    colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b',
-              '#e377c2', '#7f7f7f', '#bcbd22', '#17becf', '#FFD700']
+    colors = [(50/255, 240/255, 250/255, 1), (23/255, 190/255, 207/255, 1), (188/255, 189/255, 34/255, 1),
+          (127/255, 127/255, 127/255, 1), (227/255, 119/255, 194/255, 1),
+          (140/255, 86/255, 75/255, 1), (148/255, 103/255, 189/255, 1),
+          (214/255, 39/255, 40/255, 1), (44/255, 160/255, 44/255, 1),
+          (255/255, 127/255, 14/255, 1), (31/255, 119/255, 180/255, 1)]
     colors = colors[:len(cluster_data)]
+    colors.reverse() # reverse to match order of illustrations on the paper
 
     # Create plot
     fig, ax = plt.subplots(figsize=(12, 8))
@@ -29,15 +33,15 @@ def plot(dat, pdf, clusterToTopic, title):
 
     # Create legend
     color_patches = [plt.Rectangle((0, 0), 1, 1, fc=color) for color in colors]
+    color_patches.reverse() # reverse to match order of illustrations on the paper
     legend_labels = list(cluster_data.values())
+    legend_labels.reverse() # reverse to match order of illustrations on the paper
 
     # Place legend
     ax.legend(color_patches, legend_labels,
               loc='center left',
               bbox_to_anchor=(1.05, 0.5),
-              title="Clusters",
-              title_fontsize=12,
-              fontsize=10,
+              fontsize=14,
               handleheight=2.0,
               labelspacing=1.0)
 
@@ -45,9 +49,15 @@ def plot(dat, pdf, clusterToTopic, title):
     plt.tight_layout()
 
     # Add titles and labels
-    ax.set_title(title)
-    ax.set_xlabel('X')
-    ax.set_ylabel('Y')
+    ax.set_title(title, fontsize=18)
+
+    # Modified cluster drawing according to the requirements
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    ax.spines['left'].set_visible(False)
+    ax.spines['bottom'].set_visible(False)
 
     # Save and show plot
     plt.savefig(pdf, format='pdf', bbox_inches='tight', pad_inches=0.2)
