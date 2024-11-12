@@ -1,5 +1,5 @@
 # Bias-in-Word-Embeddings
-**GitHub**: [GitHub](https://github.com/Poomon001/Bias-in-Word-Embeddings)
+**GitHub**: [Bias-in-Word-Embeddings](https://github.com/Poomon001/Bias-in-Word-Embeddings)
 
 ## Data
 
