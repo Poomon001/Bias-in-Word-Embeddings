@@ -1,10 +1,12 @@
 .env
 venv/
 .idea/
-ft_100k.csv
-glove_100k.txt
 *100k*
 *1000*
 *120*
 *.csv
 *.vec
+*.zip
+PPT.pdf
+paper-reference.png
+Bias in Large Language Models.pdf
